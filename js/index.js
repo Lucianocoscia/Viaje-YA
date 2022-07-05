@@ -1,4 +1,5 @@
 alert("Bienvenido/a! Para realizar una compra en nuestro portal debes loguearte!");
+
 function loguearte (){
     let nombre = prompt("Ingrese su nombre");
     let email = prompt("Ingrese su email");
@@ -80,7 +81,7 @@ lugar();
 function fechas () {
     let fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
     alert(` La fecha que usted eligio de partida es: ${fecha1}`);
-    
+
     let fecha2 = prompt("Ingrese la fecha de vuelta de esta forma: dd/mm/aaaa");
     alert(` La fecha que usted eligio de vuelta es: ${fecha2}`);
 

@@ -34,14 +34,21 @@ saludar();
 
 function pregunta (){
     let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
-    if (consulta === "ida" || "IDA"){
+
+    if (consulta === "ida" || consulta ==="IDA"){
         alert("Usted eligio solo ida");
-    }else if (consulta === "ida y vuelta" || "IDA Y VUELTA")  {
+    }
+    if (consulta === "ida y vuelta" || consulta === "IDA Y VUELTA")  {
         alert("Usted eligio ida y vuelta");
     }else {
-        alert("Ingrese una opción valida")
-        pregunta();
+        alert("Ingrese una opción valida");
+        let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
     }
+
+
+/*     while(consulta != "ida" || consulta != "ida y vuelta" || consulta !="IDA" || consulta != "IDA Y VUELTA"){
+        let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
+    }  */
 }
 
 
@@ -55,6 +62,9 @@ function lugar(){
 
     let destino = prompt("Ingrese hacia donde desea viajar: 1- Cancún / 2- Punta Cana / 3-Rio de Janeiro / 4-Bariloche");
 
+    while(destino !=1 && destino !=2 && destino != 3 && destino != 4){
+        destino = prompt("Ingrese hacia donde desea viajar: 1- Cancún / 2- Punta Cana / 3-Rio de Janeiro / 4-Bariloche");
+    }
 
     switch (destino){
         case "1":
@@ -71,8 +81,31 @@ function lugar(){
             break;
         default :
             alert("No ha ingresado un lugar valido");
-            let destino = prompt("Ingrese hacia donde desea viajar: 1- Cancún / 2- Punta Cana / 3-Rio de Janeiro / 4-Bariloche");
             break;
+    }
+
+    let valor = prompt("Desea saber el valor del aereo + hotel del lugar que eligio?");
+
+    if(valor === "si" || valor === "SI"){
+        switch (destino) {
+            case "1":
+                alert("El valor del aereo + hotel a Cancún cuesta $230.000  por persona");
+                break;
+            case "2":
+                alert("El valor del aereo + hotel a Punta Cana cuesta $250.000  por persona");
+                break;
+            case "3":
+                alert("El valor del aereo + hotel a Rio de Janeiro cuesta $150.000  por persona");
+                break;
+            case "4":
+                alert("El valor del aereo + hotel a Bariloche cuesta $70.000  por persona");
+                break;
+            default:
+                alert("No ha ingresado un valor valido");
+                break;
+        }
+    } else {
+        let valor = prompt("Desea saber el valor del aereo + hotel del lugar que eligio?");
     }
 }
 lugar();
@@ -88,46 +121,20 @@ function fechas () {
 }
 fechas(); 
 
-function valores (){
-    let precio = prompt("Para saber el valor del aereo + hotel ingrese a que lugar desea ir: 1- Cancún / 2- Punta Cana / 3- Rio de Janeiro / 4- Bariloche")
 
-    switch(precio){
-        case "1":
-            alert("El valor del aereo + hotel a Cancún cuesta $230.000  por persona");
-            break;
-        case "2":
-            alert("El valor del aereo + hotel a Punta Cana cuesta $250.000  por persona");
-            break;
-        case "3":
-            alert("El valor del aereo + hotel a Rio de Janeiro cuesta $150.000  por persona");
-            break;
-        case "4":
-            alert("El valor del aereo + hotel a Bariloche cuesta $70.000  por persona");
-            break;
-        default:
-            alert("No ha ingresado un valor valido");
-            break;
-
-    }
-}
-valores();
 
 function valorFinal (){
     let cuponDescuento = prompt("Ingrese aqui su cupon de descuento");
     let precio = 100.000;
     let descuento = 100.000 * 0.2;
-    if (descuento === "VIAJE-YA" || "viaje-ya"){
+    if (cuponDescuento === "VIAJE-YA" || cuponDescuento === "viaje-ya"){
         alert("Descuento aplicado! Se le hara un descuento del 20%");
     }
-    switch (descuento == true) {
-        case 1:
+    if (cuponDescuento === "viaje-ya") {
             let resultado = `${precio} - ${descuento} ` ;
             alert(resultado);
-            break;
-    
-        default:
-            break;
     }
+
 }
 valorFinal();
 

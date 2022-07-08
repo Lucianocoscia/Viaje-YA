@@ -35,6 +35,11 @@ saludar();
 function pregunta (){
     let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
 
+    while(consulta != "ida" && consulta != "ida y vuelta" && consulta !="IDA" && consulta != "IDA Y VUELTA"){
+        let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
+        break;
+    } 
+
     if (consulta === "ida" || consulta ==="IDA"){
         alert("Usted eligio solo ida");
     }
@@ -42,13 +47,10 @@ function pregunta (){
         alert("Usted eligio ida y vuelta");
     }else {
         alert("Ingrese una opción valida");
-        let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
     }
 
 
-/*     while(consulta != "ida" || consulta != "ida y vuelta" || consulta !="IDA" || consulta != "IDA Y VUELTA"){
-        let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
-    }  */
+
 }
 
 

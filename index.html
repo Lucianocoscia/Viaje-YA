@@ -5,104 +5,203 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <title>Proyecto Viajes</title>
+
     <!-- Link google fonts -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@100;400;700&display=swap" rel="stylesheet">
 
-<!--     Link de Css Bootstrap
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-0evHe/X+R7YkIZDRvuzKMRqM+OrBnVFBL6DOitfPri4tjfHxaWutUpFmBp4vmVor" crossorigin="anonymous"> -->
+    <!-- Link de iconos -->
+    <link rel="stylesheet" href="https://unpkg.com/jam-icons/css/jam.min.css">
 
-    <!-- Link CSS -->
+    <!-- Link de CSS -->
     <link rel="stylesheet" href="./css/style.css">
-    <title>Proyecto viajes</title>
+
 </head>
 <body>
-    <div class="container">
-        <header>
-            <div class="div__img">
-                <a class="container__enlace" href="#"><img class="container__logo" src="./images/logo1-removebg-preview.png" alt="logo"></a>
+    <header>
+        <div>
+            <a href=""><img src="" alt="logo"></a>
+
+        </div>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#reserva">Reserva</a></li>
+                <li><a href="#lugares-populares">Lugares Populares</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <section id="home">
+
+            <div class="home_contenedor">
+                <h1 class="home__titulo">Encontra tu nuevo destino</h1>
+                <p class="home__parrafo">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, dicta?</p>
+                <button class="home__button">Explorar</button>
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="./pages/hoteles.html">Hoteles</a></li>
-                    <li><a href="./pages/lugares.html">Lugares</a></li>
-                    <li><a href="./pages/nosotros.html">Nosotros</a></li>
-                    <li><a href="./pages/contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
-        </header>
-        <main>
-            <div class="flexbox">
-                <div class="row">
-                    <div class="col">
-                        <h2>Vuelos</h2>
-                        <div class="container__viaje">
-                            <label for="">ida y vuelta</label>
-                            <input type="checkbox" name="" id="">
+        </section>
 
-                            <label for="">origen</label>
-                            <input type="text" name="" id="">
-                            <label for="">destino</label>
-                            <input type="text" name="" id="">
-                            <label for="">fechas</label>
-                            <input type="date" name="" id="">
-                            <input type="date" name="" id="">
-                            <label for="">pasajeros y clase</label>
-                            <input type="number">
-                            <button>Buscar</button>
-                        </div>
+        <section id="reserva">
 
 
+            <div class="hoteles__contenedor1">
 
-                        <!-- <h1>Amazing tours and holidays around the world</h1>
-                        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. </p>
-                        <button>Explore</button> -->
+                    <h2 class="hoteles__titulo">Realice su reserva aqui</h2>
+
+                <div class="contenedor__form1">
+                    <div class="form1__divs">
+                        <label for="">Elija si quiere vuelo de solo ida o ida y vuelta:</label>
+
+                        <label for="">Ida</label>
+                        <input type="checkbox" name="" id="">
+
+                        <label for=""> Ida y vuelta</label>
+                        <input type="checkbox" name="" id="">
                     </div>
-                    <div class="col">
-                        <div class="card card-1">
-                            <h5>Cancún</h5>
-                            <!-- <p>Lorem ipsum dolor sit amet.</p> -->
-                        </div>
-                        <div class="card card-2">
-                            <h5>Rio de Janeiro</h5>
-                            <!-- <p>Lorem ipsum dolor sit amet.</p> -->
-                        </div>
-                        <div class="card card-3">
-                            <h5>Punta cana</h5>
-                            <!-- <p>Lorem ipsum dolor sit amet.</p> -->
-                        </div>
-                        <div class="card card-4">
-                            <h5>Bariloche</h5>
-                            <!-- <p>Lorem ipsum dolor sit amet.</p> -->
-                        </div>
 
+                    <div class="form1__divs">
+                        <label for="">Origen</label>
+                        <input type="text" name="" id="">
+                        <label for="">Destino</label>
+                        <input type="text" name="" id="">
                     </div>
+                    <div class="form1__divs">
+                        <label for="">Fecha de salida</label>
+                        <input type="date" name="" id="">
+                        <label for="">Fecha de vuelta</label>
+                        <input type="date" name="" id="">
+                    </div>
+                    <div class="form1__divs">
+                        <label for="">Cantidad de pasajeros</label>
+                        <input type="number">
+                    </div>
+                    <div class="form1__divs">
+                        <button class="form1__divs_button">Buscar</button>
+                    </div>
+
+                </div>
+
+            </div>
+
+            <div class="hoteles__contenedor2">
+                <div class="card">
+                    <span class="span__size jam jam-map-marker" ></span>
+                    <h3 class="card__titulo1">Pick Where</h3>
+                    <p class="card_parrafo1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eligendi?</p>
+                </div>
+                <div class="card">
+                    <span class="span__size jam jam-store" ></span>
+                    <h3 class="card__titulo1">Free Shop</h3>
+                    <p class="card_parrafo1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eligendi?</p> 
+                </div>
+                <div class="card">
+                    <span class="span__size jam jam-plane" ></span>
+                    <h3 class="card__titulo1">Air Plane</h3>
+                    <p class="card_parrafo1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eligendi?</p>
                 </div>
             </div>
 
-        </main>
-    
-        <footer>
-            <div>
-                <p>Lorem ipsum dolor sit amet.</p>
+        </section>
+
+        <section id="lugares-populares">
+
+            <div class="contenedor__lugares">
+
+                <div class="lugares_titulo">
+                    <h2>Lugares populares</h2>
+                </div>
+
+                <div class="contenedor__cards">
+                    <div class="cards">
+                        <img class="card__img" src="./images/bariloche.webp" alt="">
+                        <h3 class="card__titulos">Bariloche</h3>
+                        <p class="card__parrafos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, illo!</p> 
+                    </div>
+        
+                    <div class="cards">
+                        <img class="card__img" src="./images/cancun.webp" alt="">
+                        <h3 class="card__titulos">Cancún</h3>
+                        <p class="card__parrafos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, illo!</p> 
+                    </div>
+        
+                    <div class="cards">
+                        <img  class="card__img" src="./images/punta-cana.webp" alt="">
+                        <h3 class="card__titulos">Punta Cana</h3>
+                        <p class="card__parrafos">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Facilis, illo!</p> 
+                    </div>
+                </div>
+
             </div>
-            <nav>
-                <ul>
-                    <li><a href="#">Inicio</a></li>
-                    <li><a href="./pages/hoteles.html">Hoteles</a></li>
-                    <li><a href="./pages/lugares.html">Lugares</a></li>
-                    <li><a href="./pages/nosotros.html">Nosotros</a></li>
-                    <li><a href="./pages/contacto.html">Contacto</a></li>
-                </ul>
-            </nav>
 
-        </footer>
-    </div>
+            <div class="contenedor__redes">
+                <h3>Follow Viaje-ya</h3>
+                <p>Lorem ipsum dolor sit amet.</p>
+                <span></span>
+                <span></span>
+                <span></span>
+                <span></span>
+                iconos de redes sociales
+            </div>
+        </section>
 
+        <section id="galeria">
 
+            <div class="galeria__titulo">
+                <h2>Galeria</h2>
+            </div>
+            <div class="grid">
+                <div class="grid__hijo hijo__img-1"></div>
+                <div class="grid__hijo hijo__img-2"></div>
+                <div class="grid__hijo hijo__img-3"></div>
+                <div class="grid__hijo hijo__img-4"></div>
+                <div class="grid__hijo hijo__img-5"></div>
+                <div class="grid__hijo hijo__img-6"></div>
+                <div class="grid__hijo hijo__img-7"></div>
+                <div class="grid__hijo hijo__img-8"></div>
+                <div class="grid__hijo hijo__img-9"></div>
+                <div class="grid__hijo hijo__img-10"></div>
+                <div class="grid__hijo hijo__img-11"></div>
+                <div class="grid__hijo hijo__img-12"></div>
+            </div>
 
+        </section>
+<hr>
+        <section id="contacto" class="section__contacto">
+
+            <div class="grid2">
+                <div class="grid2__hijo">
+                    <h3>Contactanos</h3>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quod vitae odit voluptates dolores aliquid tenetur.</p>
+                </div>
+                <div class="grid2__hijo">
+                    <h3>Nuestra ubicacion</h3>
+                    <p>Av.siempreviva</p>
+                </div>
+                <div class="grid2__hijo">
+                    <form action="">
+                        <label for="">ingrese</label>
+                        <input type="text">
+                    </form>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <nav>
+            <ul>
+                <li><a href="#">Home</a></li>
+                <li><a href="#hoteles">Hoteles</a></li>
+                <li><a href="#lugares-populares">Lugares Populares</a></li>
+                <li><a href="#galeria">Galeria</a></li>
+                <li><a href="#contacto">Contacto</a></li>
+            </ul>
+        </nav>
+    </footer>
 
     <script src="./js/index.js"></script>
 </body>

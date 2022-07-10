@@ -15,7 +15,7 @@ header{
     top: 0;
     height: 10vh;
     width: 100%;
-    background-color: #376D6F;
+    background-color: #F0E7D6;
     position: fixed;
 
     display: flex;
@@ -41,10 +41,10 @@ nav ul li a{
 /* Seccion Home */
 
 .home_contenedor{
-    background-image: url(/images/presentacion1.jpg);
+    background-image: url(/images/punta-cana.webp);
     background-repeat: no-repeat;
     background-size: cover;
-    background-position: top;
+    background-position: center;
     background-attachment: fixed;
     height: 70vh;
     color: #fff;
@@ -74,11 +74,23 @@ nav ul li a{
 
 /* Seccon Reserva */
 
-.hoteles__titulo{
+.reserva__titulo{
 
     height: 5vh;
     text-align: center;
-    background-color: #376D6F;
+    background-color: #F0E7D6;
+}
+
+.reserva__contenedor1{
+    background-color:#F0E7D6;
+    /* margin-top: 0.5rem; */
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+
+    height: 28vh;
 }
 .contenedor__form1{
     height: 10vh;
@@ -105,19 +117,9 @@ nav ul li a{
     padding: 0.5rem 0 0.5rem 0;
 
 }
-.hoteles__contenedor1{
-    background-color:#376D6F;
-    /* margin-top: 0.5rem; */
 
-    display: flex;
-    flex-direction: column;
-    justify-content: space-evenly;
-    align-items: center;
-
-    height: 28vh;
-}
 /* Cards con iconos */
-.hoteles__contenedor2{
+.reserva__contenedor2{
     background-color: #EDEDED;
     height: 40vh;
 
@@ -147,7 +149,7 @@ nav ul li a{
 .span__size{
     font-size: 4rem;
     padding-bottom: 1rem;
-    color: #376D6F;
+    color: #F0E7D6;
 }
 .card__titulo1{
     padding-bottom: 1rem;
@@ -209,7 +211,7 @@ nav ul li a{
 /* Redes */
 
 .contenedor__redes{
-    background-color: #376D6F;
+    background-color:  #F0E7D6 ;
     height: 10vh;
     display: flex;
     flex-direction: column;
@@ -331,10 +333,18 @@ nav ul li a{
 /* Footer */
 
 footer{
-    background-color: #376D6F;
+    background-color:#F0E7D6;
     height: 10vh;
     display:flex ;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+
+
+/* Posibles colores : #0A1016 #081118 #3C3F6D #38555E #346E4C
+
+#5DD4EF
+
+
+*/

@@ -6,31 +6,39 @@
 
 body{
     color: #fff;
-    font-family: 'Roboto', sans-serif;
+    /* font-family: 'Roboto', sans-serif; */
+    font-family: sans-serif;
+}
+.body0{
+    background-image:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(../images/avion.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
 }
 .body1{
-    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../images/wooden-bridge-koh-nangyuan-island-surat-thani-thailand.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/wooden-bridge-koh-nangyuan-island-surat-thani-thailand.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
 }
 .body2{
-    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../images/paisaje6.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/paisaje6.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
 }
 .body3{
-    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../images/maldives-island.jpg);
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/maldives-island.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
     height: 100vh;
 }
 .body4{
-    background-image:linear-gradient(rgba(0,0,0,0.2), rgba(0,0,0,0.2)), url(../images/paisaje5..webp);
+    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/paisaje5..webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
@@ -44,33 +52,39 @@ header{
     width: 100%;
 
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
     align-items: center;
 }
+.logo__enlace{
+    height: 250px;
+    width: 250px;
+}
+.logo__img{
+    height: 250px;
+    width: 250px;
+}
 nav ul{
     display: flex;
-    justify-content: space-evenly;
 }
 nav ul li{
     list-style-type: none;
+    margin: 0 20px;
+    position: relative;
 }
 nav ul li a{
     color: #fff;
     text-decoration: none;
-    padding-left: 1rem;
-    padding-right: 1rem;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
 }
-
+nav ul li a:hover{
+    opacity: 0.5;
+    /* color: #009688; */
+}
 /* Seccion Home */
-/* 
-.home_contenedor{
-    background-image: url(/images/punta-cana.webp);
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    height: 70vh;
+
+.home__contenedor{
+    height: 75vh;
     color: #fff;
     
     display: flex;
@@ -78,27 +92,58 @@ nav ul li a{
     justify-content: center;
     align-items: center;
 }
-.home__titulo{
+.contenedor__titulo{
+    text-align: center;
     font-size: 50px;
+    font-weight: 600;
     padding-bottom: 1rem;
+    text-transform: uppercase;
 }
-.home__parrafo{
-    padding-top: 1rem;
-    padding-bottom: 2rem;
+.contenedor__parrafo{
+    margin-top: 0.5rem;
     text-align: center;
-    font-size: 20px;
+    font-size: 18px;
+    margin-left: 32%;
+    margin-right: 32%;
+
 }
-.home__button{
-    width: 180px;
-    padding: 0.5rem 0 0.5rem 0;
-    font-size: 1rem;
+.contenedor__button{
+    width: 200px;
+    padding: 15px 0;
     text-align: center;
-} */
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+
+    position: relative;
+    overflow: hidden;
+}
+.span1{
+    background: #009688;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition:0.5s ;
+
+}
+button:hover span{
+    width: 100%;
+}
+.contenedor__btn{
+    text-decoration: none;
+    color: #fff;
+}
 
 
-/* Seccon Reserva */
-
-
+/* Seccion Reserva */
 
 .reserva__contenedor1{
 
@@ -149,11 +194,11 @@ nav ul li a{
 .card{
     width: 300px;
     height: 250px;
-    border: 1px solid grey;
+    border: 1px solid #1e1e1e;
     border-radius: 4px ;
-    background-color:#938C81;
+    background-color:#6560588d;
     color: #fff;
-    opacity: 1;
+    /* opacity: 1; */
 
     margin-left: 5rem;
     margin-right: 5rem;
@@ -171,7 +216,7 @@ nav ul li a{
 .span__size{
     font-size: 4rem;
     padding-bottom: 1rem;
-    color: #022B3B;
+    color: #009688;
 }
 .card__titulo1{
     padding-bottom: 1rem;
@@ -304,18 +349,109 @@ nav ul li a{
 
 .section__contacto{
     min-height: 75vh;
-    background: linear-gradient( rgba(0,0,0,0.8) , transparent);;
 }
-
+.contenedor__form h2 {
+    text-align: center;
+    /* padding-bottom: 1rem; */
+    /* font-size: 28px; */
+    /* text-transform: uppercase; */
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+    /* color: #009688; */
+}
 .grid2{
     display: grid;
     grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(2,1fr);
+    grid-template-rows: repeat(1,1fr); 
 }
 .grid2__hijo{
-    grid-area: "";
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
+.contenedor__form{
+    /* background-color:#6560588d; */
+    background-color: #1e1e1eb5;
+    box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
+    min-height: 500px;
+    width: 500px;
+    padding: 0.5rem;
+}
+.contenedor__form p{
 
+
+    display: flex;
+    flex-direction: column;
+}
+p label {
+    text-align: center;
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #009688;
+
+}
+p input {
+    text-align: start;
+    padding: 0.5rem;
+    background-color: #1e1e1eb5;
+    color: #009688;
+}
+p textarea{
+    text-align: start;
+    padding: 0.5rem;
+    background-color: #1e1e1e;
+}
+p button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #009688;
+    cursor: pointer;
+    align-self: center;
+
+    position: relative;
+    overflow: hidden;
+}
+.span1{
+    background: #009688;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition:0.5s ;
+
+}
+button:hover span{
+    width: 100%;
+}
+.contenedor__btn{
+    text-decoration: none;
+    color: #fff;
+}
+.contenedor__iframe{
+    background-color: #1e1e1eb5;
+    box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
+    min-height: 500px;
+    width: 500px;
+    padding: 1rem;
+    text-align: center;
+}
+.contenedor__iframe iframe {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}
 /* Footer */
 
 footer{

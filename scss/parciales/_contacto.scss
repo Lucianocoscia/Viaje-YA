@@ -1,0 +1,115 @@
+/* Seccion Contacto */
+.section__contacto {
+    min-height: 75vh;
+}
+
+.contenedor__form h2 {
+    text-align: center;
+    /* padding-bottom: 1rem; */
+    /* font-size: 28px; */
+    /* text-transform: uppercase; */
+    padding-top: 0.5rem;
+    margin-bottom: 1rem;
+    /* color: #009688; */
+}
+
+.grid2 {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
+}
+
+.grid2__hijo {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.contenedor__form {
+    /* background-color:#6560588d; */
+    background-color: #1e1e1eb5;
+    box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
+    min-height: 500px;
+    width: 500px;
+    padding: 0.5rem;
+}
+
+.contenedor__form p {
+    display: flex;
+    flex-direction: column;
+}
+
+p label {
+    text-align: center;
+    padding-top: 0.5rem;
+    margin-bottom: 0.5rem;
+    color: #009688;
+}
+
+p input {
+    text-align: start;
+    padding: 0.5rem;
+    background-color: #1e1e1eb5;
+    color: #009688;
+}
+
+p textarea {
+    text-align: start;
+    padding: 0.5rem;
+    background-color: #1e1e1e;
+}
+
+p button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #009688;
+    cursor: pointer;
+    align-self: center;
+    position: relative;
+    overflow: hidden;
+}
+
+.span1 {
+    background: #009688;
+    height: 100%;
+    width: 0%;
+    border-radius: 25px;
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    z-index: -1;
+    transition: 0.5s;
+}
+
+button:hover span {
+    width: 100%;
+}
+
+.contenedor__btn {
+    text-decoration: none;
+    color: #fff;
+}
+
+.contenedor__iframe {
+    background-color: #1e1e1eb5;
+    box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
+    min-height: 500px;
+    width: 500px;
+    padding: 1rem;
+    text-align: center;
+}
+
+.contenedor__iframe iframe {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-radius: 15px;
+    width: 100%;
+    height: 100%;
+}

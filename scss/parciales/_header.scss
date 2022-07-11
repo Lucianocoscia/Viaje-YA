@@ -1,0 +1,42 @@
+/* Header */
+
+header {
+    top: 0;
+    height: 15vh;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo__enlace {
+    height: 250px;
+    width: 250px;
+}
+
+.logo__img {
+    height: 250px;
+    width: 250px;
+}
+
+nav ul {
+    display: flex;
+}
+
+nav ul li {
+    list-style-type: none;
+    margin: 0 20px;
+    position: relative;
+}
+
+nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    /* text-transform: uppercase; */
+    transition: 0.5s;
+}
+
+nav ul li a:hover {
+    opacity: 0.5;
+    /* color: #009688; */
+}

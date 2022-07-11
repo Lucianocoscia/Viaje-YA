@@ -1,0 +1,71 @@
+/* Seccion Galeria  */
+.grid {
+    margin-left: 5%;
+    margin-right: 5%;
+    min-height: 75vh;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: 1rem;
+}
+
+.hijo__img-1 {
+    background-image: url(../images/playa1.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hijo__img-2 {
+    background-image: url(../images/paisaje1.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hijo__img-3 {
+    background-image: url(../images/playa2.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hijo__img-4 {
+    background-image: url(../images/playa3.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    }
+
+.hijo__img-5 {
+    background-image: url(../images/ventanilla.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.hijo__img-6 {
+    background-image: url(../images/rio-janeiro.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+/* .hijo__img-7{
+    background-image: url(../images/rio-janeiro.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hijo__img-8{
+    background-image: url(../images/rio-janeiro.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+.hijo__img-9{
+    background-image: url(../images/rio-janeiro.webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+} */

@@ -26,7 +26,7 @@ const login = new Usuario(nombre, email, contraseña);
 usuarios.push(login);
 
 //Muestro por alert como almacene los datos q registro
-const mensaje = `Nombre: ${login.nombre}\n Email: ${login.email}\n Contraseña: ${login.contraseña}`;
+const mensaje = `Nombre: ${login.nombre} \nEmail: ${login.email}\nContraseña: ${login.contraseña}`;
 alert(mensaje);
 }
 
@@ -163,7 +163,7 @@ function reserva(){
                 paquetes.push("70.000");
                 alert("El valor del aereo + hotel a Bariloche cuesta $70.000  por persona");
                 let precio4 = 70000;
-                
+
                 paquetes.push(precio4);
                 valorFinal(precio4);
                 break;

@@ -1,113 +1,125 @@
-*{
+
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
 }
 
-body{
+body {
     color: #fff;
     /* font-family: 'Roboto', sans-serif; */
     font-family: sans-serif;
 }
-.body0{
-    background-image:linear-gradient(rgba(0,0,0,0.65), rgba(0,0,0,0.65)), url(../images/avion.png);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-.body1{
-    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/wooden-bridge-koh-nangyuan-island-surat-thani-thailand.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-.body2{
-    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/paisaje6.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-.body3{
-    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/maldives-island.jpg);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-.body4{
-    background-image:linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url(../images/paisaje5..webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-    height: 100vh;
-}
-/* Header */
 
-header{
+.body0 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.65), rgba(0, 0, 0, 0.65)), url(../images/avion.png);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.body1 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/wooden-bridge-koh-nangyuan-island-surat-thani-thailand.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.body2 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/paisaje6.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.body3 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/maldives-island.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+.body4 {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)), url(../images/paisaje5..webp);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+/* Header */
+header {
     top: 0;
     height: 15vh;
     width: 100%;
-
     display: flex;
     justify-content: space-between;
     align-items: center;
 }
-.logo__enlace{
+
+.logo__enlace {
     height: 250px;
     width: 250px;
 }
-.logo__img{
+
+.logo__img {
     height: 250px;
     width: 250px;
 }
-nav ul{
+
+nav ul {
     display: flex;
 }
-nav ul li{
+
+nav ul li {
     list-style-type: none;
     margin: 0 20px;
     position: relative;
 }
-nav ul li a{
+
+nav ul li a {
     color: #fff;
     text-decoration: none;
     /* text-transform: uppercase; */
     transition: 0.5s;
 }
-nav ul li a:hover{
+
+nav ul li a:hover {
     opacity: 0.5;
     /* color: #009688; */
 }
-/* Seccion Home */
 
-.home__contenedor{
+/* Seccion Home */
+.home__contenedor {
     height: 75vh;
     color: #fff;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.contenedor__titulo{
+
+.contenedor__titulo {
     text-align: center;
     font-size: 50px;
     font-weight: 600;
     padding-bottom: 1rem;
     text-transform: uppercase;
 }
-.contenedor__parrafo{
+
+.contenedor__parrafo {
     margin-top: 0.5rem;
     text-align: center;
     font-size: 18px;
     margin-left: 32%;
     margin-right: 32%;
-
 }
-.contenedor__button{
+
+.contenedor__button {
     width: 200px;
     padding: 15px 0;
     text-align: center;
@@ -118,11 +130,11 @@ nav ul li a:hover{
     background: transparent;
     color: #fff;
     cursor: pointer;
-
     position: relative;
     overflow: hidden;
 }
-.span1{
+
+.span1 {
     background: #009688;
     height: 100%;
     width: 0%;
@@ -131,59 +143,63 @@ nav ul li a:hover{
     left: 0;
     bottom: 0;
     z-index: -1;
-    transition:0.5s ;
-
+    transition: 0.5s;
 }
-button:hover span{
+
+button:hover span {
     width: 100%;
 }
-.contenedor__btn{
+
+.contenedor__btn {
     text-decoration: none;
     color: #fff;
 }
 
+/* Footer */
+footer {
+    bottom: 0;
+    height: 10vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 
 /* Seccion Reserva */
-
-.reserva__contenedor1{
-
+.reserva__contenedor1 {
     display: flex;
     flex-direction: column;
     justify-content: space-evenly;
     align-items: center;
-
     height: 40vh;
 }
-.contenedor__form1{
+
+.contenedor__form1 {
     height: 40vh;
     display: flex;
     flex-direction: row;
     justify-content: space-evenly;
     align-items: flex-start;
 }
-.form1__divs{
+
+.form1__divs {
     padding-left: 1rem;
     padding-right: 1rem;
-
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     align-items: center;
     align-self: center;
+    }
 
-}
-.form1__divs_button{
+.form1__divs_button {
     width: 180px;
     text-align: center;
-
     padding: 0.5rem 0 0.5rem 0;
-
 }
 
 /* Cards con iconos */
-
-.reserva__contenedor2{
-
+.reserva__contenedor2 {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -191,140 +207,146 @@ button:hover span{
     height: 35vh;
 }
 
-.card{
+.card {
     width: 300px;
     height: 250px;
     border: 1px solid #1e1e1e;
-    border-radius: 4px ;
-    background-color:#6560588d;
+    border-radius: 4px;
+    background-color: #6560588d;
     color: #fff;
     /* opacity: 1; */
-
     margin-left: 5rem;
     margin-right: 5rem;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-
     transition: 0.5s;
 }
-.card:hover{
+
+.card:hover {
     transform: translateY(-10px);
 }
-.span__size{
+
+.span__size {
     font-size: 4rem;
     padding-bottom: 1rem;
     color: #009688;
 }
-.card__titulo1{
+
+.card__titulo1 {
     padding-bottom: 1rem;
     text-align: center;
 }
-.card_parrafo1{
+
+.card_parrafo1 {
     text-align: center;
 }
 
 /* Lugares Populares */
-.lugares_titulo{
+.lugares_titulo {
     color: #fff;
     text-align: center;
     height: 5vh;
 }
-.contenedor__cards{
-    height: 70vh;
 
+.contenedor__cards {
+    height: 70vh;
     display: flex;
     flex-direction: row;
     justify-content: center;
     align-items: center;
 }
-.cards{
+
+.cards {
     width: 350px;
     height: 400px;
-    border-radius: 10px ;
+    border-radius: 10px;
     /* border: 1px solid #000 ; */
     background-color: #fff;
     /* color: #000; */
     text-align: center;
-
     margin-left: 5rem;
     margin-right: 5rem;
-
     gap: 1rem;
-    
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: transform .4s;
 }
-.cards:hover{
+
+.cards:hover {
     transform: scale(1.03);
 }
-.card__img{
+
+.card__img {
     width: 100%;
     height: 100%;
 }
-.card__titulos{
+
+.card__titulos {
     padding-top: 1rem;
     font-size: 24px;
 }
-.card__parrafos{
+
+.card__parrafos {
     padding-bottom: 1rem;
 }
 
 /* Seccion Galeria  */
-
-.grid{
+.grid {
     margin-left: 5%;
     margin-right: 5%;
     min-height: 75vh;
     display: grid;
-
-    grid-template-columns: repeat(3,1fr);
-    grid-template-rows: repeat(3,1fr);
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
     gap: 1rem;
 }
 
-
-.hijo__img-1{
+.hijo__img-1 {
     background-image: url(../images/playa1.png);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.hijo__img-2{
+
+.hijo__img-2 {
     background-image: url(../images/paisaje1.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.hijo__img-3{
+
+.hijo__img-3 {
     background-image: url(../images/playa2.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.hijo__img-4{
+
+.hijo__img-4 {
     background-image: url(../images/playa3.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
-}
-.hijo__img-5{
+    }
+
+.hijo__img-5 {
     background-image: url(../images/ventanilla.jpg);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
-.hijo__img-6{
+
+.hijo__img-6 {
     background-image: url(../images/rio-janeiro.webp);
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 }
+
 /* .hijo__img-7{
     background-image: url(../images/rio-janeiro.webp);
     background-position: center;
@@ -343,13 +365,11 @@ button:hover span{
     background-size: cover;
     background-repeat: no-repeat;
 } */
-
-
 /* Seccion Contacto */
-
-.section__contacto{
+.section__contacto {
     min-height: 75vh;
 }
+
 .contenedor__form h2 {
     text-align: center;
     /* padding-bottom: 1rem; */
@@ -359,18 +379,21 @@ button:hover span{
     margin-bottom: 1rem;
     /* color: #009688; */
 }
-.grid2{
+
+.grid2 {
     display: grid;
-    grid-template-columns: repeat(2,1fr);
-    grid-template-rows: repeat(1,1fr); 
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(1, 1fr);
 }
-.grid2__hijo{
+
+.grid2__hijo {
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
-.contenedor__form{
+
+.contenedor__form {
     /* background-color:#6560588d; */
     background-color: #1e1e1eb5;
     box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
@@ -378,30 +401,32 @@ button:hover span{
     width: 500px;
     padding: 0.5rem;
 }
-.contenedor__form p{
 
-
+.contenedor__form p {
     display: flex;
     flex-direction: column;
 }
+
 p label {
     text-align: center;
     padding-top: 0.5rem;
     margin-bottom: 0.5rem;
     color: #009688;
-
 }
+
 p input {
     text-align: start;
     padding: 0.5rem;
     background-color: #1e1e1eb5;
     color: #009688;
 }
-p textarea{
+
+p textarea {
     text-align: start;
     padding: 0.5rem;
     background-color: #1e1e1e;
 }
+
 p button {
     width: 200px;
     padding: 15px 0;
@@ -414,11 +439,11 @@ p button {
     color: #009688;
     cursor: pointer;
     align-self: center;
-
     position: relative;
     overflow: hidden;
 }
-.span1{
+
+.span1 {
     background: #009688;
     height: 100%;
     width: 0%;
@@ -427,17 +452,19 @@ p button {
     left: 0;
     bottom: 0;
     z-index: -1;
-    transition:0.5s ;
-
+    transition: 0.5s;
 }
-button:hover span{
+
+button:hover span {
     width: 100%;
 }
-.contenedor__btn{
+
+.contenedor__btn {
     text-decoration: none;
     color: #fff;
 }
-.contenedor__iframe{
+
+.contenedor__iframe {
     background-color: #1e1e1eb5;
     box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
     min-height: 500px;
@@ -445,6 +472,7 @@ button:hover span{
     padding: 1rem;
     text-align: center;
 }
+
 .contenedor__iframe iframe {
     padding-top: 1rem;
     padding-bottom: 1rem;
@@ -452,23 +480,3 @@ button:hover span{
     width: 100%;
     height: 100%;
 }
-/* Footer */
-
-footer{
-
-    bottom: 0;
-
-    height: 10vh;
-    display:flex ;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-}
-
-
-/* Posibles colores : #0A1016 #081118 #3C3F6D #38555E #346E4C
-
-#5DD4EF
-
-
-*/

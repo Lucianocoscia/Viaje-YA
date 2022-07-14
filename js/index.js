@@ -16,9 +16,9 @@ const usuarios = [];
 function validarEmail(email){
     let expReg =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     let esValido = expReg.test(email);
-    if(esValido === true){
+    if(esValido == true){
         alert("El correo electronico es válido.")
-    }else if(esValido === false){
+    }else{
         alert("El correo electronico NO es válido. Verifique de estar utilizando el '@' y su respectivo '.com'.")
 
     }
@@ -45,7 +45,7 @@ alert(mensaje);
 }
 // Si no la q se me ocurre es tirar un promp en el else de validarEmail() y luego validar q si es tal pushe tal cosa y sino otra, al igual q hice con mensaje2 y mensaje3
 
-// loguearte ();
+loguearte ();
 
 //array donde seran guardados los paquetes 
 const paquetes = [];

@@ -11,12 +11,14 @@ class Usuario {
 }
 // array de usuarios donde van a ir almacenados los usarios q se logueen
 const usuarios = [];
+
+// me tira siempre q es incorrecto y no se porque 
 function validarEmail(email){
     let expReg =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
     let esValido = expReg.test(email);
-    if(esValido == true){
+    if(esValido === true){
         alert("El correo electronico es válido.")
-    }else{
+    }else if(esValido === false){
         alert("El correo electronico NO es válido. Verifique de estar utilizando el '@' y su respectivo '.com'.")
 
     }
@@ -26,9 +28,9 @@ function validarEmail(email){
 function loguearte (){
     let nombre = prompt("Ingrese su nombre");
     let email = prompt("Ingrese su email");
-    validarEmail();
+    // validarEmail();
     let contraseña = prompt("Ingrese su contraseña");
-    alert("Felicitaciones! Has creado tu cuenta con exito! ")
+    alert("Felicitaciones! Has creado tu cuenta con exito! Te regalamos un cupon del 20% en tu reserva ingresando 'viaje-ya'.")
     alert(`Bienvenido/a! ${nombre}`);
 
 //Creo los usarios como objetos para luego pushearlos
@@ -41,9 +43,9 @@ usuarios.push(login);
 const mensaje = `Cuenta registrada: \nNombre: ${login.nombre} \nEmail: ${login.email}\nContraseña: ${login.contraseña}`;
 alert(mensaje);
 }
+// Si no la q se me ocurre es tirar un promp en el else de validarEmail() y luego validar q si es tal pushe tal cosa y sino otra, al igual q hice con mensaje2 y mensaje3
 
-
-loguearte ();
+// loguearte ();
 
 //array donde seran guardados los paquetes 
 const paquetes = [];
@@ -57,7 +59,7 @@ function valorFinal (precio){
     if (cuponDescuento === "viaje-ya") {
             let resultado = precio - descuento;
             alert(`El valor final con el descuento aplicado es de $${resultado}`);
-            paquetes.push(resultado)
+            paquetes.push(resultado);
     }
     if (cuponDescuento === "VIAJE-YA" || cuponDescuento === "viaje-ya"){
         alert("Descuento aplicado! Se le hizo un descuento del 20%");
@@ -87,9 +89,6 @@ function reserva(){
 
         let fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
 
-/*         while(fecha1 < N){
-            fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
-        } */
         alert(` La fecha que usted eligio de partida es: ${fecha1}`);
         paquetes.push(fecha1);
     
@@ -154,30 +153,30 @@ function reserva(){
             case "1":
                 alert("El valor del aereo + hotel a Cancún cuesta $230.000  por persona");
                 let precio1 = 230000;
+                paquetes.push(precio1);
 
                 valorFinal(precio1);
-                paquetes.push(precio1);
                 break;
             case "2":
                 alert("El valor del aereo + hotel a Punta Cana cuesta $250.000  por persona");
                 let precio2 = 250000;
+                paquetes.push(precio2);
 
                 valorFinal(precio2);
-                paquetes.push(precio2);
                 break;
             case "3":
                 alert("El valor del aereo + hotel a Rio de Janeiro cuesta $150.000  por persona");
                 let precio3 = 150000;
+                paquetes.push(precio3);
 
                 valorFinal(precio3);
-                paquetes.push(precio3);
                 break;
             case "4":
                 alert("El valor del aereo + hotel a Bariloche cuesta $70.000  por persona");
                 let precio4 = 70000;
+                paquetes.push(precio4);
 
                 valorFinal(precio4);
-                paquetes.push(precio4);
                 break;
             default:
                 alert("No ha ingresado un valor valido");
@@ -189,12 +188,12 @@ function reserva(){
 
 //Muestro por alert como almacene los datos q registro
 if(consulta == "ida y vuelta"){
-    const mensaje2 = `Su reserva quedo de esta manera \n Fecha de partida: ${paquetes[0]} \n Fecha de vuelta: ${paquetes[1]} \n Origen: ${paquetes[2] }\n Destino: ${paquetes[3]} \n Precio Final con descuento aplicado: $${paquetes[4]} \n Precio Lista: $${paquetes[5]}  `;
+    const mensaje2 = `Su reserva quedo de esta manera \n Fecha de partida: ${paquetes[0]} \n Fecha de vuelta: ${paquetes[1]} \n Origen: ${paquetes[2] }\n Destino: ${paquetes[3]} \n Precio Final con descuento aplicado: $${paquetes[5]} \n Precio Lista: $${paquetes[4]}  `;
     alert(mensaje2);
 }
 
 if(consulta == "ida"){
-    const mensaje3 = `Su reserva quedo de esta manera \n Fecha de partida: ${paquetes[0]} \n Origen: ${paquetes[1] }\n Destino: ${paquetes[2]} \n Precio Final con descuento aplicado: $${paquetes[3]} \n Precio Lista:  $${paquetes[4]}   `;
+    const mensaje3 = `Su reserva quedo de esta manera \n Fecha de partida: ${paquetes[0]} \n Origen: ${paquetes[1] }\n Destino: ${paquetes[2]} \n Precio Final con descuento aplicado: $${paquetes[4]} \n Precio Lista:  $${paquetes[3]}   `;
     alert(mensaje3);
 }
 
@@ -211,6 +210,7 @@ const paquetes00 = [
     { id: 6, nombre: "New York", precio: 350000 },
     { id: 7, nombre: "Los Angeles", precio: 300000 },
 ];
+
 function pregunta(){
     let pregunta1 = prompt("Desea buscar en nuestra lista de paquetes algo mas?");
     if (pregunta1 == "si" || pregunta1 == "SI"){
@@ -220,6 +220,8 @@ function pregunta(){
         for(const item of filtrados){
             console.log(item);
         }
+    }else {
+        alert("Disfrute de nuestro portal! Gracias por visitarnos.")
     }
 }
 pregunta();

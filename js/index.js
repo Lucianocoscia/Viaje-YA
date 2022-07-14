@@ -11,10 +11,22 @@ class Usuario {
 }
 // array de usuarios donde van a ir almacenados los usarios q se logueen
 const usuarios = [];
+function validarEmail(email){
+    let expReg =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;
+    let esValido = expReg.test(email);
+    if(esValido == true){
+        alert("El correo electronico es válido.")
+    }else{
+        alert("El correo electronico NO es válido. Verifique de estar utilizando el '@' y su respectivo '.com'.")
+
+    }
+
+}
 
 function loguearte (){
     let nombre = prompt("Ingrese su nombre");
     let email = prompt("Ingrese su email");
+    validarEmail();
     let contraseña = prompt("Ingrese su contraseña");
     alert("Felicitaciones! Has creado tu cuenta con exito! ")
     alert(`Bienvenido/a! ${nombre}`);
@@ -26,31 +38,15 @@ const login = new Usuario(nombre, email, contraseña);
 usuarios.push(login);
 
 //Muestro por alert como almacene los datos q registro
-const mensaje = `Nombre: ${login.nombre} \nEmail: ${login.email}\nContraseña: ${login.contraseña}`;
+const mensaje = `Cuenta registrada: \nNombre: ${login.nombre} \nEmail: ${login.email}\nContraseña: ${login.contraseña}`;
 alert(mensaje);
 }
 
 
 loguearte ();
 
-
-
-function preguntaVuelo (){
-    let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
-
-    while(consulta != "ida" && consulta != "ida y vuelta" && consulta !="IDA" && consulta != "IDA Y VUELTA"){
-        consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
-
-    } 
-
-    if (consulta === "ida" || consulta ==="IDA"){
-        alert("Usted eligio solo ida");
-    }else if (consulta === "ida y vuelta" || consulta === "IDA Y VUELTA")  {
-        alert("Usted eligio ida y vuelta");
-    }
-}
-
-preguntaVuelo ();
+//array donde seran guardados los paquetes 
+const paquetes = [];
 
 //funcion q calcula el valor final de acuerdo al destino q elijan
 
@@ -61,6 +57,7 @@ function valorFinal (precio){
     if (cuponDescuento === "viaje-ya") {
             let resultado = precio - descuento;
             alert(`El valor final con el descuento aplicado es de $${resultado}`);
+            paquetes.push(resultado)
     }
     if (cuponDescuento === "VIAJE-YA" || cuponDescuento === "viaje-ya"){
         alert("Descuento aplicado! Se le hizo un descuento del 20%");
@@ -68,20 +65,39 @@ function valorFinal (precio){
 }
 
 
-
-//array donde seran guardados los paquetes 
-const paquetes = [];
-
 function reserva(){
+    let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
+
+    while(consulta != "ida" && consulta != "ida y vuelta" && consulta !="IDA" && consulta != "IDA Y VUELTA"){
+        consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
+
+    } 
+
+    if (consulta === "ida" || consulta ==="IDA"){
+        alert("Usted eligio solo ida");
+
+        let fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
+        alert(` La fecha que usted eligio de partida es: ${fecha1}`);
+        paquetes.push(fecha1);
+
+
+        
+    }else if (consulta === "ida y vuelta" || consulta === "IDA Y VUELTA")  {
+        alert("Usted eligio ida y vuelta");
+
+        let fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
+
+/*         while(fecha1 < N){
+            fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
+        } */
+        alert(` La fecha que usted eligio de partida es: ${fecha1}`);
+        paquetes.push(fecha1);
     
-    let fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
-    alert(` La fecha que usted eligio de partida es: ${fecha1}`);
-    paquetes.push(fecha1);
-
-
-    let fecha2 = prompt("Ingrese la fecha de vuelta de esta forma: dd/mm/aaaa");
-    alert(` La fecha que usted eligio de vuelta es: ${fecha2}`);
-    paquetes.push(fecha2);
+        let fecha2 = prompt("Ingrese la fecha de vuelta de esta forma: dd/mm/aaaa");
+        alert(` La fecha que usted eligio de vuelta es: ${fecha2}`);
+        paquetes.push(fecha2);
+    }
+    
 
 
     let origen = prompt("Ingrese desde donde viaja");
@@ -136,36 +152,32 @@ function reserva(){
         
         switch (destino) {
             case "1":
-                paquetes.push("230.000");
                 alert("El valor del aereo + hotel a Cancún cuesta $230.000  por persona");
                 let precio1 = 230000;
 
-                paquetes.push(precio1);
                 valorFinal(precio1);
+                paquetes.push(precio1);
                 break;
             case "2":
-                paquetes.push("250.000");
                 alert("El valor del aereo + hotel a Punta Cana cuesta $250.000  por persona");
                 let precio2 = 250000;
 
-                paquetes.push(precio2);
                 valorFinal(precio2);
+                paquetes.push(precio2);
                 break;
             case "3":
-                paquetes.push("150.000");
                 alert("El valor del aereo + hotel a Rio de Janeiro cuesta $150.000  por persona");
                 let precio3 = 150000;
 
-                paquetes.push(precio3);
                 valorFinal(precio3);
+                paquetes.push(precio3);
                 break;
             case "4":
-                paquetes.push("70.000");
                 alert("El valor del aereo + hotel a Bariloche cuesta $70.000  por persona");
                 let precio4 = 70000;
 
-                paquetes.push(precio4);
                 valorFinal(precio4);
+                paquetes.push(precio4);
                 break;
             default:
                 alert("No ha ingresado un valor valido");
@@ -176,20 +188,68 @@ function reserva(){
 
 
 //Muestro por alert como almacene los datos q registro
-const mensaje2 = `Su reserva quedo de esta manera \n Fecha de partida: ${paquetes[0]} \n Fecha de vuelta: ${paquetes[1]} \n Origen: ${paquetes[2] }\n Destino: ${paquetes[3]} \n Precio: $${paquetes[4]}   `;
-alert(mensaje2);
+if(consulta == "ida y vuelta"){
+    const mensaje2 = `Su reserva quedo de esta manera \n Fecha de partida: ${paquetes[0]} \n Fecha de vuelta: ${paquetes[1]} \n Origen: ${paquetes[2] }\n Destino: ${paquetes[3]} \n Precio Final con descuento aplicado: $${paquetes[4]} \n Precio Lista: $${paquetes[5]}  `;
+    alert(mensaje2);
+}
+
+if(consulta == "ida"){
+    const mensaje3 = `Su reserva quedo de esta manera \n Fecha de partida: ${paquetes[0]} \n Origen: ${paquetes[1] }\n Destino: ${paquetes[2]} \n Precio Final con descuento aplicado: $${paquetes[3]} \n Precio Lista:  $${paquetes[4]}   `;
+    alert(mensaje3);
+}
+
 
 }
 reserva();
 
-
-
+const paquetes00 = [
+    { id: 1, nombre: "Cancún", precio: 230000 },
+    { id: 2, nombre: "Punta Cana", precio: 250000 },
+    { id: 3, nombre: "Rio de Janeiro", precio: 150000 },
+    { id: 4, nombre: "Bariloche", precio: 70000 },
+    { id: 5, nombre: "Ushuaia", precio: 100000 },
+    { id: 6, nombre: "New York", precio: 350000 },
+    { id: 7, nombre: "Los Angeles", precio: 300000 },
+];
+function pregunta(){
+    let pregunta1 = prompt("Desea buscar en nuestra lista de paquetes algo mas?");
+    if (pregunta1 == "si" || pregunta1 == "SI"){
+        let pregunta2 = prompt("Que paquete desea buscar? Escriba aqui el nombre del Destino.")
+        let listaDePaquetes = "";
+        let filtrados = paquetes00.filter(elemento => elemento.nombre == pregunta2);
+        for(const item of filtrados){
+            console.log(item);
+        }
+    }
+}
+pregunta();
 
 
 
 // APUNTES Y PRUEBAS
 
+/* El detalle está en las validaciones por ejemplo.. es un tema que se tocó hace muy poco de todos modos, pero para la siguiente entrega podrias implementar función de validación en un mail (por ejemplo que haya un arroba), en las fechas (tiene que se superior al año 2022 por lo menos). */
+// VALIDE MAIL PERO ME FALTA CREARLE WHILE SI ES Q NO INGRESA BIEN EL DATO Y CON ESO MODIFICAR EL ARRAY YA Q EL VALOR Q ME TOMARIA NO ES EL DE ANTES SINO UNO NUEVO VA O ESO ME PASO ANTES.
+// VALIDAR FECHAS ESTARIA BUENO, BUSCATE VIDEO DE YOUTUBE.
+// - Métodos de búsqueda y filtrado sobre el Array fijarme como implementar esto y entregar. Y luego entrar lo de DOM. 
+
+/*
+filter filtra dependiendo de la condicion pasada
+let valor = prompt("Ingrese el valor minimo");
+let nombres = "";
+let filtrados = productos.filter(elemento => elemento.precio > valor);
+for(const item of filtrados){
+  log(item)
+}
+alert(nombres); */
+
+
+
+
+
+
 //\n -> es salto de linea
+
 
 // ejemplo de class construtora 
 
@@ -233,3 +293,23 @@ if (this.vendido = true) {
 
 //push hacia el array de paquetes, (almaceno los destinos y precios en esa lista)
 // paquetes.push(viajeArmado);
+
+// Ejemplo de entrega para dom, aplicar a si quiere ver nuestra lista de paquetes
+
+/* let lista = document.getElementById("contenedor");
+
+let productos = [
+{id: 1, destino: "Punta Cana", precio: 5000 },
+{id: 2, destino: "Rio de Janeiro", precio: 5000 },
+{id: 3, destino: "Cancún", precio: 5000 },
+{id: 4, destino: "Bariloche", precio: 5000 } ,   
+]
+
+for(const producto of productos){
+    let li = document.createElement("li");
+    li.innerHTML = `<h2>El ID del viaje es: ${producto.id}</h2>
+                    <p>El Destino q eligio es: ${producto.destino}</p>
+                    <span>El Precio es de: ${producto.precio}</span>
+                   `
+    lista.append(li);
+} */

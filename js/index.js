@@ -65,9 +65,18 @@ function valorFinal (precio){
         alert("Descuento aplicado! Se le hizo un descuento del 20%");
     }
 }
-
+const paquetes00 = [
+    { id: 1, destino: "Cancún", precio: 230000 },
+    { id: 2, destino: "Punta Cana", precio: 250000 },
+    { id: 3, destino: "Rio de Janeiro", precio: 150000 },
+    { id: 4, destino: "Bariloche", precio: 70000 },
+    { id: 5, destino: "Ushuaia", precio: 100000 },
+    { id: 6, destino: "New York", precio: 350000 },
+    { id: 7, destino: "Los Angeles", precio: 300000 },
+];
 
 function reserva(){
+//VIAJE IDA || IDA Y VUELTA
     let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
 
     while(consulta != "ida" && consulta != "ida y vuelta" && consulta !="IDA" && consulta != "IDA Y VUELTA"){
@@ -77,7 +86,7 @@ function reserva(){
 
     if (consulta === "ida" || consulta ==="IDA"){
         alert("Usted eligio solo ida");
-
+//FECHA
         let fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
         alert(` La fecha que usted eligio de partida es: ${fecha1}`);
         paquetes.push(fecha1);
@@ -86,7 +95,7 @@ function reserva(){
         
     }else if (consulta === "ida y vuelta" || consulta === "IDA Y VUELTA")  {
         alert("Usted eligio ida y vuelta");
-
+// FECHAS
         let fecha1 = prompt("Ingrese la fecha de salida de esta forma: dd/mm/aaaa");
 
         alert(` La fecha que usted eligio de partida es: ${fecha1}`);
@@ -98,38 +107,87 @@ function reserva(){
     }
     
 
-
+// ORIGEN
     let origen = prompt("Ingrese desde donde viaja");
     paquetes.push(origen);
     alert(`Usted viaja desde : ${origen}`);
     
-
+// DESTINOS
     let destino = prompt("Ingrese hacia donde desea viajar:\n 1- Cancún \n 2- Punta Cana \n 3-Rio de Janeiro \n 4-Bariloche");
 
     while(destino != 1 && destino !=2 && destino != 3 && destino != 4){
         destino = prompt("Ingrese hacia donde desea viajar:\n 1- Cancún \n 2- Punta Cana \n 3-Rio de Janeiro \n 4-Bariloche");
     }
 
+    //CREANDO ELEMENTOS DOM 
+
+// card1
+let lista = document.getElementById("card");
+let div = document.createElement("div");
+
+// card2
+let lista2 = document.getElementById("card2");
+let div2 = document.createElement("div");
+
+// card3
+let lista3 = document.getElementById("card3");
+let div3 = document.createElement("div");
+
+// card4
+let lista4 = document.getElementById("card4");
+let div4 = document.createElement("div");
+
+
+
+
     switch (destino){
         case "1":
+//card1
+            div.innerHTML = `<h2>El Destino es: ${paquetes00[0].destino}</h2>
+            <p>El Precio es de: ${paquetes00[0].precio}</p>
+            <span>El id del Destino q eligio es: ${paquetes00[0].id}</span>
+                `
+            lista.append(div);
+
             let cancun = "Cancún";
             paquetes.push(cancun);
 
             alert("Usted eligio Cancún");
             break;
         case "2":
+//card3
+            div3.innerHTML = `<h2>El Destino es: ${paquetes00[1].destino}</h2>
+            <p>El Precio es de: ${paquetes00[1].precio}</p>
+            <span>El id del Destino q eligio es: ${paquetes00[1].id}</span>
+                `
+            lista3.append(div3);
+
             let puntaCana = "Punta Cana";
             paquetes.push(puntaCana);
 
             alert("Usted eligio Punta Cana");
             break;
         case "3": 
+//card4
+            div4.innerHTML = `<h2>El Destino es: ${paquetes00[2].destino}</h2>
+            <p>El Precio es de: ${paquetes00[2].precio}</p>
+            <span>El id del Destino q eligio es: ${paquetes00[2].id}</span>
+                `
+            lista4.append(div4);
+
             let rioDeJaneiro = "Rio de Janeiro";
             paquetes.push(rioDeJaneiro);
 
             alert("Usted eligio Rio de Janeiro");
             break;
         case "4":
+//card2
+            div2.innerHTML = `<h2>El Destino es: ${paquetes00[3].destino}</h2>
+            <p>El Precio es de: ${paquetes00[3].precio}</p>
+            <span>El id del Destino q eligio es: ${paquetes00[3].id}</span>
+                `
+            lista2.append(div2);
+
             let bariloche = "Bariloche";
             paquetes.push(bariloche);
 
@@ -140,7 +198,7 @@ function reserva(){
             break;
     }
 
-
+//VALORES
     let valor = prompt("Desea saber el valor del aereo + hotel del lugar que eligio?");
 
     while(valor != "si" && valor != "SI"){
@@ -201,24 +259,18 @@ if(consulta == "ida"){
 }
 reserva();
 
-const paquetes00 = [
-    { id: 1, nombre: "Cancún", precio: 230000 },
-    { id: 2, nombre: "Punta Cana", precio: 250000 },
-    { id: 3, nombre: "Rio de Janeiro", precio: 150000 },
-    { id: 4, nombre: "Bariloche", precio: 70000 },
-    { id: 5, nombre: "Ushuaia", precio: 100000 },
-    { id: 6, nombre: "New York", precio: 350000 },
-    { id: 7, nombre: "Los Angeles", precio: 300000 },
-];
 
 function pregunta(){
     let pregunta1 = prompt("Desea buscar en nuestra lista de paquetes algo mas?");
     if (pregunta1 == "si" || pregunta1 == "SI"){
         let pregunta2 = prompt("Que paquete desea buscar? Escriba aqui el nombre del Destino.")
-        let listaDePaquetes = "";
-        let filtrados = paquetes00.filter(elemento => elemento.nombre == pregunta2);
+        // let listaDePaquetes = "";
+        // let buscadorDePaquetes = [];
+        let filtrados = paquetes00.filter(elemento => elemento.destino == pregunta2);
         for(const item of filtrados){
             console.log(item);
+/*             buscadorDePaquetes.push(item);
+            alert(`El item q busco es ${buscadorDePaquetes[0]}`); */
         }
     }else {
         alert("Disfrute de nuestro portal! Gracias por visitarnos.")

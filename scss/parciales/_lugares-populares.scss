@@ -11,6 +11,7 @@
     flex-direction: row;
     justify-content: center;
     align-items: center;
+
 }
 
 .cards {
@@ -21,23 +22,56 @@
     background-color: #fff;
     /* color: #000; */
     text-align: center;
-    margin-left: 5rem;
-    margin-right: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
     gap: 1rem;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     transition: transform .4s;
+
 }
 
 .cards:hover {
     transform: scale(1.03);
 }
 
-.card__img {
+/* .card__img {
     width: 100%;
     height: 100%;
+    position: relative;
+
+} */
+.card-1{
+    position: relative;
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(/images/cancun.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+    
+}
+.card-2{
+    // position: relative;
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(/images/bariloche.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+}
+.card-3{
+    // position: relative;
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(/images/punta-cana.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
+}
+.card-4{
+    // position: relative;
+    background:linear-gradient(rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),url(/images/rio-janeiro.webp);
+    background-size: cover;
+    background-repeat: no-repeat;
+
+
 }
 
 .card__titulos {
@@ -47,4 +81,83 @@
 
 .card__parrafos {
     padding-bottom: 1rem;
+}
+
+//JavaScript
+
+#card{
+    color: #fff;
+}
+#card2{
+    color: #fff;
+}
+#card3{
+    color: #fff;
+}
+#card4{
+    color: #fff;
+}
+#card div{
+    position: absolute;
+}
+#card div2{
+    position: absolute;
+}
+#card div3{
+    position: absolute;
+}
+#card div4{
+    position: absolute;
+}
+#card div h2{
+    font-size: 24px;
+    // color: #fff;
+
+}
+#card div2 h2{
+    font-size: 24px;
+    // color: #fff;
+
+}
+#card div3 h2{
+    font-size: 24px;
+    // color: #fff;
+
+}
+#card div4 h2{
+    font-size: 24px;
+    // color: #fff;
+
+}
+#card div p{
+    padding: 0.5rem;
+    font-size: 18px ;
+}
+#card div2 p{
+    padding: 0.5rem;
+    font-size: 18px ;
+}
+#card div3 p{
+    padding: 0.5rem;
+    font-size: 18px ;
+}
+#card div4 p{
+    padding: 0.5rem;
+    font-size: 18px ;
+}
+#card p span {
+    padding: 0.3rem;
+    font-size: 18px ;
+}
+#card2 p span {
+    padding: 0.3rem;
+    font-size: 18px ;
+}
+#card3 p span {
+    padding: 0.3rem;
+    font-size: 18px ;
+}
+#card4 p span {
+    padding: 0.3rem;
+    font-size: 18px ;
 }

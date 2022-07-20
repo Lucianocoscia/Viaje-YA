@@ -1,13 +1,58 @@
 /* Seccion Home */
 .home__contenedor {
-    height: 75vh;
+    height: 40vh;
     color: #fff;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
 }
+.home__contenedor2{
+    height: 35vh;
+    margin-left: 5%;
+    margin-right: 5%;
+}
+.div__flex{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    height: 100%;
+}
+.contenedor__logueo{
+    background-color: #1e1e1eb5;
+    
+    box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    padding-top: 0.5rem;
+    width: 650px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+}
+.div__loguearte{
 
+    height: 100%;
+
+}
+.contenedor__logueo label {
+    margin: 2px;
+    text-align: center;
+}
+.contenedor__logueo input{
+    background-color: #1e1e1eb5;
+    color: #fff;
+    padding: 2.5px 0 2.5px 0;
+}
+
+.loguearte__paddings{
+    padding: 0.5rem;
+}
+.loguearte__titulo{
+    margin-bottom: 1rem;
+    text-align: center;
+}
 .contenedor__titulo {
     text-align: center;
     font-size: 50px;
@@ -28,7 +73,7 @@
     width: 200px;
     padding: 15px 0;
     text-align: center;
-    margin: 20px 10px;
+    margin: 10px 10px;
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid #009688;
@@ -37,6 +82,7 @@
     cursor: pointer;
     position: relative;
     overflow: hidden;
+    align-self: center;
 }
 
 .span1 {
@@ -58,4 +104,19 @@ button:hover span {
 .contenedor__btn {
     text-decoration: none;
     color: #fff;
+}
+
+.div__loguearte button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
 }

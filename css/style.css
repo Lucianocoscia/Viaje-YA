@@ -543,7 +543,7 @@ div button .span1 {
 .grid {
   margin-left: 5%;
   margin-right: 5%;
-  min-height: 75vh;
+  min-height: 65vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -586,7 +586,7 @@ div button .span1 {
 }
 
 .hijo__img-6 {
-  background-image: url(../images/rio-janeiro.webp);
+  background-image: url(../images/rio-janeiro.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -610,6 +610,35 @@ div button .span1 {
     background-size: cover;
     background-repeat: no-repeat;
 } */
+.barra-busqueda {
+  width: 75%;
+  padding: 10px;
+  border-radius: 12px;
+  margin-left: 10%;
+  margin-bottom: 2rem;
+  background-color: #1e1e1eb5;
+  cursor: text;
+  color: #fff;
+}
+
+.busqueda {
+  display: flex;
+  align-items: flex-start;
+}
+
+.busqueda button .span-icono {
+  font-size: 2rem;
+  background: transparent;
+  color: #fff;
+}
+
+.busqueda button {
+  background: transparent;
+  border: transparent;
+  cursor: pointer;
+  width: 100px;
+}
+
 /* Seccion Contacto */
 .section__contacto {
   min-height: 75vh;

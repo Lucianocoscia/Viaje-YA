@@ -40,6 +40,12 @@
     </header>
     <main>
         <section>
+            <div class="busqueda">
+                <input id="barraDeBusqueda" class="barra-busqueda" type="text" placeholder="Buscar....">
+                <button id="buscar"><span class="span-icono jam jam-search"></span></button>
+            </div>
+        </section>
+        <section>
                         <div class="grid">
                             <div class="grid__hijo hijo__img-1"></div>
                             <div class="grid__hijo hijo__img-2"></div>
@@ -52,6 +58,16 @@
                             <div class="grid__hijo hijo__img-9"></div> -->
                         </div>
         </section>
+        <div class="modal-container" id="modal_container">
+            <div class="modal-carrito">
+                <div class="contenedor__flex">
+                    <h3 class="modal__titulo">Carrito</h3>
+                    <button class="boton1" id="cerrar">Cerrar</button>
+                </div>
+
+                <div id="carrito-contenedor"></div>
+            </div>
+        </div>
             
     </main>
 
@@ -66,5 +82,7 @@
             </ul>
         </nav>
     </footer>
+    <script src="../js/busqueda.js" type="module"></script>
+    <script src="../js/modal.js" type="module"></script>
 </body>
 </html>

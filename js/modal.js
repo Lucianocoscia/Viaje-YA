@@ -1,4 +1,5 @@
 import { carritoLugares } from "./carritoLugares.js";
+import { paquetes00 } from "./productos.js";
 
 const modalContenedor = document.querySelector(".modal-container");
 
@@ -6,7 +7,7 @@ const abrirCarrito = document.getElementById("open");
 
 const cerrarCarrito = document.getElementById("cerrar");
 
-const modalCarrito = document.querySelector(".modal-carrito")
+const modalCarrito = document.querySelector(".modal-carrito");
 
 abrirCarrito.addEventListener( "click", () =>{
     modalContenedor.classList.toggle("modal-active");
@@ -27,10 +28,4 @@ modalCarrito.addEventListener('click', (e) =>{
 
 
 // si son un mismo producto q se sumen con un condicional se puede hacer, INVESTIGAR
-// tomar id y aplicar splice.
-
-/* const botonEliminar = document.getElementById("eliminar");
-
-botonEliminar.addEventListener ("click", () => {
-    carritoDeCompras.splice([0])
-}) */
+// tomar id y aplicar splice. es decir q se elimine el valor

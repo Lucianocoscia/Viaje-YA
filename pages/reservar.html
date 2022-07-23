@@ -47,30 +47,33 @@
                         <label for="">Elija si quiere vuelo de solo ida o ida y vuelta:</label>
 
                         <label for="">Ida</label>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="ida">
 
                         <label for=""> Ida y vuelta</label>
-                        <input type="checkbox" name="" id="">
+                        <input type="checkbox" name="" id="idaYVuelta">
                     </div>
 
                     <div class="form1__divs">
                         <label for="">Origen</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="origen">
+
                         <label for="">Destino</label>
-                        <input type="text" name="" id="">
+                        <input type="text" name="" id="destino">
                     </div>
                     <div class="form1__divs">
+
                         <label for="">Fecha de salida</label>
-                        <input type="date" name="" id="">
+                        <input type="date" name="" id="fechaSalida">
+
                         <label for="">Fecha de vuelta</label>
-                        <input type="date" name="" id="">
+                        <input type="date" name="" id="fechaVuelta">
                     </div>
                     <div class="form1__divs">
                         <label for="">Cantidad de pasajeros</label>
-                        <input type="number">
+                        <input id="pasajeros" type="number">
                     </div>
                     <div class="form1__divs">
-                        <button class="form1__divs_button"><span class="span0"></span>Buscar</button>
+                        <button id="botonReserva" class="form1__divs_button"><span class="span0"></span>Buscar Reserva</button>
                     </div>
 
                 </div>
@@ -96,7 +99,16 @@
                 </div>
             </div>
         </section>
+        <div class="modal-container" id="modal_container">
+            <div class="modal-carrito">
+                <div class="contenedor__flex">
+                    <h3 class="modal__titulo">Carrito</h3>
+                    <button class="boton1" id="cerrar">Cerrar</button>
+                </div>
 
+                <div id="carrito-contenedor"></div>
+            </div>
+        </div>
 
     </main>
 
@@ -112,7 +124,8 @@
         </nav>
     </footer>
     
-<script src="../js/reserva.js"></script>
+<script src="../js/reserva.js" type="module"></script>
 <script src="../js/busqueda.js" type="module"></script>
+<script src="../js/modal.js" type="module"></script>
 </body>
 </html>

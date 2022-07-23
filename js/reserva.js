@@ -10,14 +10,117 @@ function valorFinal (precio){
     if (cuponDescuento === "viaje-ya") {
             let resultado = precio - descuento;
             alert(`El valor final con el descuento aplicado es de $${resultado}`);
-            paquetes.push(resultado);
+            paquetes.push(resultado); // [5]
     }
     if (cuponDescuento === "VIAJE-YA" || cuponDescuento === "viaje-ya"){
         alert("Descuento aplicado! Se le hizo un descuento del 20%");
     }
 }
 
-function reserva(){
+function reserva (){
+
+//funcion q muestra el precio para pasarla luego en un boton.addEventListener donde muestre el precio
+
+function mostrarPrecio (){
+
+    //VALORES
+    switch (destino.value) {
+        case "Cancún":
+            alert("El valor del aereo + hotel a Cancún cuesta $230.000  por persona");
+
+            let precio1 = 230000;
+            paquetes.push(precio1); // [4]
+
+            valorFinal(precio1); 
+            break;
+        case "Punta Cana":
+            alert("El valor del aereo + hotel a Punta Cana cuesta $250.000  por persona");
+            let precio2 = 250000;
+            paquetes.push(precio2);
+
+            valorFinal(precio2);
+            break;
+        case "Rio de Janeiro":
+            alert("El valor del aereo + hotel a Rio de Janeiro cuesta $150.000  por persona");
+            let precio3 = 150000;
+            paquetes.push(precio3);
+
+            valorFinal(precio3);
+            break;
+        case "Bariloche":
+            alert("El valor del aereo + hotel a Bariloche cuesta $70.000  por persona");
+            let precio4 = 70000;
+            paquetes.push(precio4);
+
+            valorFinal(precio4);
+            break;
+        default:
+            alert("No ha ingresado un destino valido");
+            break;
+    }
+}
+
+    const boton = document.getElementById("botonReserva");
+    
+    boton.addEventListener("click", () => {
+
+        const vueloIda = document.getElementById("ida");
+
+        const vueloIdaYVuelta = document.getElementById("idaYVuelta")
+    
+        const fecha1 = document.getElementById("fechaSalida");
+        paquetes.push(fecha1); 
+    
+        const fecha2 = document.getElementById("fechaVuelta");
+        paquetes.push(fecha2); 
+    
+        const origen = document.getElementById("origen");
+        paquetes.push(origen); 
+    
+        const destino = document.getElementById("destino");
+        paquetes.push(destino); 
+
+        const cantidadDePasajeros = document.getElementById("pasajeros");
+
+        mostrarPrecio();
+        paquetes.push(cantidadDePasajeros);
+
+        if(vueloIda.checked){
+
+            const mensaje1 = `Su reserva quedo de esta manera: \n Fecha de partida: ${paquetes[0].value} \n Origen: ${paquetes[2].value}\n Destino: ${paquetes[3].value} \n Precio Final con descuento aplicado: $${paquetes[5]} \n Precio Lista: $${paquetes[4]} \n Cantidad De pasajeros: ${paquetes[6].value} `;
+
+            alert(mensaje1);
+
+        }else if(vueloIdaYVuelta.checked) {
+
+            const mensaje2 = `Su reserva quedo de esta manera: \n Fecha de partida: ${paquetes[0].value} \n Fecha de vuelta: ${paquetes[1].value} \n Origen: ${paquetes[2].value}\n Destino: ${paquetes[3].value} \n Precio Final con descuento aplicado: $${paquetes[5]} \n Precio Lista: $${paquetes[4]} \n Cantidad De pasajeros: ${paquetes[6].value}  `;
+
+            alert(mensaje2);
+        }
+
+    // borro datos de los inputs
+        fecha1.value = "";
+        fecha2.value = "";
+        origen.value = "";
+        destino.value = "";
+        cantidadDePasajeros.value = "";
+        vueloIdaYVuelta.checked = false;
+        vueloIda.checked = false;
+    })
+}
+// llamado de la funcion
+reserva();
+
+//paquetese ya armados ponerlos en carrito. cards chicas
+
+// reserva guardarla en carrito de reserva.
+
+
+
+
+// CODIGO ANTERIOR DE FUNCION RESERVA SIN APLICAR DOM
+
+/* function reserva(){
 
     //VIAJE IDA || IDA Y VUELTA
     let consulta = prompt("Ingrese si desea vuelo solo de ida o ida y vuelta");
@@ -153,112 +256,4 @@ function reserva(){
         }
 
 }
-reserva();
-
-
-
-
-
-
-
-// APUNTES Y PRUEBAS
-
-/* El detalle está en las validaciones por ejemplo.. es un tema que se tocó hace muy poco de todos modos, pero para la siguiente entrega podrias implementar función de validación en un mail (por ejemplo que haya un arroba), en las fechas (tiene que se superior al año 2022 por lo menos). */
-// VALIDE MAIL PERO ME FALTA CREARLE WHILE SI ES Q NO INGRESA BIEN EL DATO Y CON ESO MODIFICAR EL ARRAY YA Q EL VALOR Q ME TOMARIA NO ES EL DE ANTES SINO UNO NUEVO VA O ESO ME PASO ANTES.
-// VALIDAR FECHAS ESTARIA BUENO, BUSCATE VIDEO DE YOUTUBE.
-// - Métodos de búsqueda y filtrado sobre el Array fijarme como implementar esto y entregar. Y luego entrar lo de DOM. 
-
-/*
-filter filtra dependiendo de la condicion pasada
-let valor = prompt("Ingrese el valor minimo");
-let nombres = "";
-let filtrados = productos.filter(elemento => elemento.precio > valor);
-for(const item of filtrados){
-  log(item)
-}
-alert(nombres); */
-
-
-
-
-
-
-//\n -> es salto de linea
-
-
-// ejemplo de class construtora 
-
-/* class ViajeExtranjero {
-    constructor(lugar, precio, dias){
-        this.lugar = lugar;
-        this.precio = precio;
-        this.duracion = dias;
-        this.vendido = false;
-
-    }
-    vender(){
-        this.vendido = true;
-    }
-
-}
-
-const viaje1 = new ViajeExtranjero("New York", "5000 USD", 7);
-
-console.log(viaje1);
-viaje1.vender();
-console.log(viaje1);
-
-if (this.vendido = true) {
-    console.log("Usted ha comprado un viaje con Viaje-ya");
-} */
-
-
-// clase constructora de los paquetes 
-/* class Paquete {
-
-    constructor(origen,destino,valor){
-        this.origen = origen;
-        this.destino = destino;
-        this.precio = valor;
-    }
-
-} */
-//Creo los usarios como objetos para luego pushearlos
-// const viajeArmado = new Paquete(origen,destino, valor);
-
-//push hacia el array de paquetes, (almaceno los destinos y precios en esa lista)
-// paquetes.push(viajeArmado);
-
-// Ejemplo de entrega para dom, aplicar a si quiere ver nuestra lista de paquetes
-
-/* let lista = document.getElementById("contenedor");
-
-let productos = [
-{id: 1, destino: "Punta Cana", precio: 5000 },
-{id: 2, destino: "Rio de Janeiro", precio: 5000 },
-{id: 3, destino: "Cancún", precio: 5000 },
-{id: 4, destino: "Bariloche", precio: 5000 } ,   
-]
-
-for(const producto of productos){
-    let li = document.createElement("li");
-    li.innerHTML = `<h2>El ID del viaje es: ${producto.id}</h2>
-                    <p>El Destino q eligio es: ${producto.destino}</p>
-                    <span>El Precio es de: ${producto.precio}</span>
-                   `
-    lista.append(li);
-} */
-
-// cerrar sesion con un boton y meter el sessionstorage.clear()
-
-/* let usuario;
-let usuarioStorage = sessionStorage.getItem("usuario");
-
-if(usuarioStorage){
-  let usuario = usuarioStorage;
-  let mensaje = `Bienvenid@ ${usuario}`;
-  alert(mensaje);
-}else{
-  usuario = prompt("Ingrese su nombre");
-  sessionStorage.setItem("usuario", usuario);
-} */
+reserva(); */

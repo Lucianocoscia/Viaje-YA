@@ -55,34 +55,43 @@
 
 
                         <label for="">Nombre:</label>
-                        <input type="text">
+                        <input id="nombre" type="text">
     
                         <label for="">Email:</label>
-                        <input type="email" name="" id="">
+                        <input  type="email" name="" id="email">
 
                         <label for="">Contraseña:</label>
-                        <input type="password">
+                        <input id="contrasenia" type="password">
 
-                        <button class="contenedor__button"><span class="span1"></span>Registrarse</button>
+                        <button id="botonRegistro" class="contenedor__button"><span class="span1"></span>Registrarse</button>
                 </div>
 
                 <div class="contenedor__logueo">
                     <h3 class="loguearte__titulo">Ya tienes un cuenta? Inicia sesion</h3>
 
                         <label class="loguearte__paddings" for="">Email:</label>
-                        <input class="loguearte__paddings" type="email" name="" id="">
+                        <input  class="loguearte__paddings" type="email" name="" id="email2">
 
                         <label class="loguearte__paddings" for="">Contraseña:</label>
-                        <input class="loguearte__paddings" type="password">
+                        <input id="contrasenia2" class="loguearte__paddings" type="password">
 
-                        <button class="contenedor__button"><span class="span1"></span>Iniciar Sesion</button>
+                        <button id="botonInicioSesion" class="contenedor__button"><span class="span1"></span>Iniciar Sesion</button>
                 </div>
             </div>
 
 
 
         </section>
+        <div class="modal-container" id="modal_container">
+            <div class="modal-carrito">
+                <div class="contenedor__flex">
+                    <h3 class="modal__titulo">Carrito</h3>
+                    <button class="boton1" id="cerrar">Cerrar</button>
+                </div>
 
+                <div id="carrito-contenedor"></div>
+            </div>
+        </div>
 
     </main>
 
@@ -99,5 +108,6 @@
     </footer>
     
     <script src="./js/login.js"></script>
+    <script src="./js/modal.js" type="module"></script>
 </body>
 </html>

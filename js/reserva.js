@@ -4,17 +4,18 @@ const paquetes = [];
 //funcion q calcula el valor final de acuerdo al destino q elijan
 
 function valorFinal (precio){
-    let cuponDescuento = prompt("Ingrese aqui su cupon de descuento");
+    const cuponDescuento = document.getElementById("descuento");
     let descuento = precio * 0.2;
 
-    if (cuponDescuento === "viaje-ya") {
+    if (cuponDescuento.value === "viaje-ya") {
             let resultado = precio - descuento;
             alert(`El valor final con el descuento aplicado es de $${resultado}`);
             paquetes.push(resultado); // [5]
     }
-    if (cuponDescuento === "VIAJE-YA" || cuponDescuento === "viaje-ya"){
+    if (cuponDescuento.value === "VIAJE-YA" || cuponDescuento.value === "viaje-ya"){
         alert("Descuento aplicado! Se le hizo un descuento del 20%");
     }
+    cuponDescuento.value = "";
 }
 
 function reserva (){
@@ -103,6 +104,7 @@ function mostrarPrecio (){
         fecha2.value = "";
         origen.value = "";
         destino.value = "";
+        // cuponDescuento.value = "";
         cantidadDePasajeros.value = "";
         vueloIdaYVuelta.checked = false;
         vueloIda.checked = false;

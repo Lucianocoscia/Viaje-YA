@@ -1,4 +1,4 @@
-import { paquetes00 } from "./productos.js";
+import { paquetes00 } from "./paquetes-armados.js";
 
 let carritoDeCompras = [];
 

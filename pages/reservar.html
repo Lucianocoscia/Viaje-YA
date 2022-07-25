@@ -29,7 +29,7 @@
         </div>
         <nav>
             <ul>
-                <li><a href="../index.html">Home</a></li>
+                <li><a href="../index.html">Inicio</a></li>
                 <li><a href="#">Reservas</a></li>
                 <li><a href="./lugares-populares.html">Lugares Populares</a></li>
                 <li><a href="./galeria.html">Galeria</a></li>
@@ -71,6 +71,9 @@
                     <div class="form1__divs">
                         <label for="">Cantidad de pasajeros</label>
                         <input id="pasajeros" type="number">
+
+                        <label for="">Cupon de descuento:</label>
+                        <input id="descuento" type="text">
                     </div>
                     <div class="form1__divs">
                         <button id="botonReserva" class="form1__divs_button"><span class="span0"></span>Buscar Reserva</button>
@@ -80,25 +83,18 @@
 
             </div>
         </section>
+
         <section>
-            <div class="reserva__contenedor2">
-                <div class="card">
-                    <span class="span__size jam jam-map-marker" ></span>
-                    <h3 class="card__titulo1">Pick Where</h3>
-                    <p class="card_parrafo1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eligendi?</p>
-                </div>
-                <div class="card">
-                    <span class="span__size jam jam-store" ></span>
-                    <h3 class="card__titulo1">Free Shop</h3>
-                    <p class="card_parrafo1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eligendi?</p> 
-                </div>
-                <div class="card">
-                    <span class="span__size jam jam-plane" ></span>
-                    <h3 class="card__titulo1">Air Plane</h3>
-                    <p class="card_parrafo1">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Illum, eligendi?</p>
+            <div class="paquetes__contenedor">
+                <div class="paquetes__relative">
+<!--                     <span class="paquetes__flecha jam jam-arrow-right"></span> -->
+                    <div id="contenedorPaquetes" class="paquetes__flex">
+
+                    </div>
                 </div>
             </div>
         </section>
+
         <div class="modal-container" id="modal_container">
             <div class="modal-carrito">
                 <div class="contenedor__flex">
@@ -127,5 +123,6 @@
 <script src="../js/reserva.js" type="module"></script>
 <script src="../js/busqueda.js" type="module"></script>
 <script src="../js/modal.js" type="module"></script>
+<script src="../js/renderpaquetes.js" type="module"></script>
 </body>
 </html>

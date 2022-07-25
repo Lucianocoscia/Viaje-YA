@@ -1,5 +1,5 @@
 import { carritoLugares } from "./carritoLugares.js";
-import { paquetes00 } from "./productos.js";
+import { paquetes00 } from "./paquetes-armados.js";
 
 const modalContenedor = document.querySelector(".modal-container");
 

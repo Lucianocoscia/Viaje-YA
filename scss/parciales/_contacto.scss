@@ -1,70 +1,63 @@
 /* Seccion Contacto */
 .section__contacto {
-    min-height: 75vh;
+    height: 40vh;
 }
-
-.contenedor__form h2 {
-    text-align: center;
-    /* padding-bottom: 1rem; */
-    /* font-size: 28px; */
-    /* text-transform: uppercase; */
-    padding-top: 0.5rem;
-    margin-bottom: 1rem;
-    /* color: #009688; */
-}
-
-.grid2 {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(1, 1fr);
-}
-
-.grid2__hijo {
+.flex__contacto{
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+}
+.contenedor__form h2 {
+    text-align: center;
+/*     padding-top: 0.5rem;
+    margin-bottom: 1rem; */
 }
 
 .contenedor__form {
-    /* background-color:#6560588d; */
     background-color: #1e1e1eb5;
     box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
-    min-height: 500px;
-    width: 500px;
-    padding: 0.5rem;
+    margin-left: 15%;
+    margin-right: 15%;
+    height: 40vh;
+    margin-bottom: 1rem;
+/*     padding: 0.5rem; */
 }
 
 .contenedor__form p {
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0.3rem;
 }
 
 p label {
     text-align: center;
     padding-top: 0.5rem;
+    padding-right: 1.5rem;
     margin-bottom: 0.5rem;
     color: #fff;
 }
 
 p input {
     text-align: start;
-    padding: 0.5rem;
+    width: 60%;
+    padding: 0.4rem;
     background-color: #1e1e1eb5;
     color: #009688;
 }
 
 p textarea {
     text-align: start;
-    padding: 0.5rem;
+    width: 60%;
+/*     padding: 0.5rem; */
     background-color: #1e1e1e;
 }
 
 p button {
     width: 200px;
-    padding: 15px 0;
+    padding: 10px 0;
     text-align: center;
-    margin: 20px 10px;
+    margin: 10px 10px;
     border-radius: 25px;
     font-weight: bold;
     border: 2px solid #009688;
@@ -97,19 +90,52 @@ button:hover span {
     color: #fff;
 }
 
-.contenedor__iframe {
-    background-color: #1e1e1eb5;
-    box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
-    min-height: 500px;
-    width: 500px;
-    padding: 1rem;
+
+/* Cards con iconos */
+.reserva__contenedor2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    height: 33vh;
+    // overflow: hidden;
+    margin-top: 1rem;
+}
+
+.card {
+    width: 300px;
+    height: 250px;
+    border: 1px solid #1e1e1eb0;
+    border-radius: 4px;
+    background-color: #6560588d;
+    color: #fff;
+    /* opacity: 1; */
+    margin-left: 5rem;
+    margin-right: 5rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: 0.5s;
+
+}
+
+.card:hover {
+    transform: translateY(-10px);
+
+}
+
+.span__size {
+    font-size: 4rem;
+    padding-bottom: 1rem;
+    color: #009687c2;
+}
+
+.card__titulo1 {
+    padding-bottom: 1rem;
     text-align: center;
 }
 
-.contenedor__iframe iframe {
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-    border-radius: 15px;
-    width: 100%;
-    height: 100%;
+.card_parrafo1 {
+    text-align: center;
 }

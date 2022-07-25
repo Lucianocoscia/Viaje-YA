@@ -1,0 +1,49 @@
+// comparten css con la seccion de registro tmb
+
+.contenedor__logueo{
+    height: 75vh;
+    display: flex;
+    align-items: center;
+}
+.contenedor__logueo div {
+    background-color: #1e1e1eb5;  
+    box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
+    padding-left: 1rem;
+    padding-right: 1rem;
+    width: 500px;
+    height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+
+}
+.contenedor__logueo div h3 {
+    text-align: center;
+    padding-bottom: 1rem;
+}
+.contenedor__logueo label {
+    margin: 0.5rem;
+    text-align: center;
+}
+.contenedor__logueo input{
+    background-color: #1e1e1eb5;
+    color: #fff;
+    padding: 2.5px 0 2.5px 0;
+    margin-bottom: 0.8rem;
+}
+
+
+/* .div__loguearte button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+} */

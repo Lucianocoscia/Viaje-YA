@@ -126,7 +126,7 @@ nav ul li a:hover {
 
 /* Seccion Home */
 .home__contenedor {
-  height: 40vh;
+  height: 55vh;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -135,7 +135,7 @@ nav ul li a:hover {
 }
 
 .home__contenedor2 {
-  height: 35vh;
+  height: 20vh;
   margin-left: 5%;
   margin-right: 5%;
 }
@@ -143,45 +143,9 @@ nav ul li a:hover {
 .div__flex {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   height: 100%;
-}
-
-.contenedor__logueo {
-  background-color: #1e1e1eb5;
-  box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
-  padding-left: 1rem;
-  padding-right: 1rem;
-  padding-top: 0.5rem;
-  width: 650px;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-
-.div__loguearte {
-  height: 100%;
-}
-
-.contenedor__logueo label {
-  margin: 2px;
-  text-align: center;
-}
-
-.contenedor__logueo input {
-  background-color: #1e1e1eb5;
-  color: #fff;
-  padding: 2.5px 0 2.5px 0;
-}
-
-.loguearte__paddings {
-  padding: 0.5rem;
-}
-
-.loguearte__titulo {
-  margin-bottom: 1rem;
-  text-align: center;
 }
 
 .contenedor__titulo {
@@ -190,14 +154,6 @@ nav ul li a:hover {
   font-weight: 600;
   padding-bottom: 1rem;
   text-transform: uppercase;
-}
-
-.contenedor__parrafo {
-  margin-top: 0.5rem;
-  text-align: center;
-  font-size: 18px;
-  margin-left: 32%;
-  margin-right: 32%;
 }
 
 .contenedor__button {
@@ -237,19 +193,18 @@ button:hover span {
   color: #fff;
 }
 
-.div__loguearte button {
-  width: 200px;
-  padding: 15px 0;
+.contenedor__parrafo {
+  margin-top: 0.5rem;
+  margin-bottom: 1rem;
   text-align: center;
-  margin: 20px 10px;
-  border-radius: 25px;
-  font-weight: bold;
-  border: 2px solid #009688;
-  background: transparent;
-  color: #fff;
-  cursor: pointer;
-  position: relative;
-  overflow: hidden;
+  font-size: 18px;
+  margin-left: 32%;
+  margin-right: 32%;
+}
+
+.div__flex a {
+  color: #009688;
+  text-decoration: none;
 }
 
 /* Footer */
@@ -330,7 +285,7 @@ footer {
 
 .form1__divs input {
   background-color: #1e1e1eb5;
-  color: #009688;
+  color: #fff;
   padding: 5px 0 5px 0;
 }
 
@@ -339,49 +294,67 @@ footer {
   padding: 0.5rem;
 }
 
-/* Cards con iconos */
-.reserva__contenedor2 {
+.paquetes__contenedor {
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.paquetes__flex {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 35vh;
+  gap: 1rem;
+  overflow: auto;
+  scrollbar-color: #1e1e1e;
+  scrollbar-width: none;
 }
 
-.card {
-  width: 300px;
+.paquetes__flex::-webkit-scrollbar-track {
+  background-color: transparent;
+}
+
+.paquetes__flex::-webkit-scrollbar-thumb {
+  background-color: #009688;
+}
+
+.paquetes__flex::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+.paquete__item {
+  width: 80%;
+  max-width: 400px;
   height: 250px;
-  border: 1px solid #1e1e1e;
-  border-radius: 4px;
-  background-color: #6560588d;
-  color: #fff;
-  /* opacity: 1; */
-  margin-left: 5rem;
-  margin-right: 5rem;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  transition: 0.5s;
+  border-radius: 8px;
+  padding: 1rem;
+  flex-shrink: 0;
 }
 
-.card:hover {
-  transform: translateY(-10px);
+/* .paquetes__relative {
+    position: relative;
 }
 
-.span__size {
-  font-size: 4rem;
-  padding-bottom: 1rem;
-  color: #009688;
+.paquetes__flecha {
+    position: absolute;
+    top: 50%;
+    right: 0;
+    background-color: #fff;
+    color: #000;
+    padding: 1rem;
+    border-radius: 50%;
+    transform: translateY(-50%) translateX(50%);
+    cursor: pointer;
+} */
+.paquete__img {
+  height: 80%;
+  width: 100%;
+  position: relative;
+  object-fit: cover;
 }
 
-.card__titulo1 {
-  padding-bottom: 1rem;
-  text-align: center;
-}
-
-.card_parrafo1 {
-  text-align: center;
+.absolute {
+  bottom: 0;
+  left: 0;
 }
 
 /* Lugares Populares */
@@ -641,71 +614,66 @@ div button .span1 {
 
 /* Seccion Contacto */
 .section__contacto {
-  min-height: 75vh;
+  height: 40vh;
+}
+
+.flex__contacto {
+  display: flex;
+  flex-direction: column;
 }
 
 .contenedor__form h2 {
   text-align: center;
-  /* padding-bottom: 1rem; */
-  /* font-size: 28px; */
-  /* text-transform: uppercase; */
-  padding-top: 0.5rem;
-  margin-bottom: 1rem;
-  /* color: #009688; */
-}
-
-.grid2 {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(1, 1fr);
-}
-
-.grid2__hijo {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
+  /*     padding-top: 0.5rem;
+    margin-bottom: 1rem; */
 }
 
 .contenedor__form {
-  /* background-color:#6560588d; */
   background-color: #1e1e1eb5;
   box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
-  min-height: 500px;
-  width: 500px;
-  padding: 0.5rem;
+  margin-left: 15%;
+  margin-right: 15%;
+  height: 40vh;
+  margin-bottom: 1rem;
+  /*     padding: 0.5rem; */
 }
 
 .contenedor__form p {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 0.3rem;
 }
 
 p label {
   text-align: center;
   padding-top: 0.5rem;
+  padding-right: 1.5rem;
   margin-bottom: 0.5rem;
   color: #fff;
 }
 
 p input {
   text-align: start;
-  padding: 0.5rem;
+  width: 60%;
+  padding: 0.4rem;
   background-color: #1e1e1eb5;
   color: #009688;
 }
 
 p textarea {
   text-align: start;
-  padding: 0.5rem;
+  width: 60%;
+  /*     padding: 0.5rem; */
   background-color: #1e1e1e;
 }
 
 p button {
   width: 200px;
-  padding: 15px 0;
+  padding: 10px 0;
   text-align: center;
-  margin: 20px 10px;
+  margin: 10px 10px;
   border-radius: 25px;
   font-weight: bold;
   border: 2px solid #009688;
@@ -738,20 +706,99 @@ button:hover span {
   color: #fff;
 }
 
-.contenedor__iframe {
-  background-color: #1e1e1eb5;
-  box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
-  min-height: 500px;
-  width: 500px;
-  padding: 1rem;
+/* Cards con iconos */
+.reserva__contenedor2 {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  height: 33vh;
+  margin-top: 1rem;
+}
+
+.card {
+  width: 300px;
+  height: 250px;
+  border: 1px solid #1e1e1eb0;
+  border-radius: 4px;
+  background-color: #6560588d;
+  color: #fff;
+  /* opacity: 1; */
+  margin-left: 5rem;
+  margin-right: 5rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  transition: 0.5s;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.span__size {
+  font-size: 4rem;
+  padding-bottom: 1rem;
+  color: #009687c2;
+}
+
+.card__titulo1 {
+  padding-bottom: 1rem;
   text-align: center;
 }
 
-.contenedor__iframe iframe {
-  padding-top: 1rem;
-  padding-bottom: 1rem;
-  border-radius: 15px;
-  width: 100%;
-  height: 100%;
+.card_parrafo1 {
+  text-align: center;
 }
+
+.contenedor__logueo {
+  height: 75vh;
+  display: flex;
+  align-items: center;
+}
+
+.contenedor__logueo div {
+  background-color: #1e1e1eb5;
+  box-shadow: 0 0 20px 0 rgba(157, 140, 140, 0.8);
+  padding-left: 1rem;
+  padding-right: 1rem;
+  width: 500px;
+  height: 400px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+.contenedor__logueo div h3 {
+  text-align: center;
+  padding-bottom: 1rem;
+}
+
+.contenedor__logueo label {
+  margin: 0.5rem;
+  text-align: center;
+}
+
+.contenedor__logueo input {
+  background-color: #1e1e1eb5;
+  color: #fff;
+  padding: 2.5px 0 2.5px 0;
+  margin-bottom: 0.8rem;
+}
+
+/* .div__loguearte button {
+    width: 200px;
+    padding: 15px 0;
+    text-align: center;
+    margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;
+} */
 /*# sourceMappingURL=style.css.map */

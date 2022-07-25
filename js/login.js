@@ -17,9 +17,8 @@ const usuarios = [];
 // comienzo de funcion de logueo
 
 function loguearte (){
-    const nombre = document.getElementById("nombre");
 
-    // let nombreStorage = sessionStorage.getItem("nombre");
+    const nombre = document.getElementById("nombre");
 
     const email = document.getElementById("email");
 
@@ -46,9 +45,6 @@ function loguearte (){
 
             sessionStorage.setItem("mensaje", mensaje);
         }
-        nombre.value = "";
-        email.value = "";
-        contrasenia.value ="";
     })
 
     // INICIO DE SESION
@@ -61,6 +57,8 @@ function loguearte (){
 
     boton2.addEventListener("click", () => {
 
+        console.log(contrasenia.value);
+        console.log(contrasenia2.value);
         if(email2.value === ""  || contrasenia2.value === "" ){
 
             alert("Complete los campos indicados. Para que el registro se aplique de manera correcta.")
@@ -78,6 +76,8 @@ function loguearte (){
         nombre.value = "";
         email.value = "";
         contrasenia.value ="";
+        email2.value = "";
+        contrasenia2.value ="";
     })
 }
 
@@ -97,11 +97,7 @@ if(usuarioStorage){
 } */
 
 // cerrar sesion con un boton y meter el sessionstorage.clear()
-       
-
-/*         let email = prompt("Ingrese su email"); */
-        // validarEmail();
-
+    
 
 /* function validarEmail(email){
     let expReg =/^[a-z0-9!#$%&'*+/=?^_`{|}~-]+(?:\.[a-z0-9!#$%&'*+/=?^_`{|}~-]+)*@(?:[a-z0-9](?:[a-z0-9-]*[a-z0-9])?\.)+[a-z0-9](?:[a-z0-9-]*[a-z0-9])?$/;

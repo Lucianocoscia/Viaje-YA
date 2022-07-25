@@ -1,4 +1,4 @@
-import {paquetes00} from "./productos.js"
+import {paquetes00} from "./paquetes.js"
 
 const barraBusqueda = document.getElementById("barraDeBusqueda");
 

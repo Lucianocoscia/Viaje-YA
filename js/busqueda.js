@@ -4,16 +4,12 @@ const barraBusqueda = document.getElementById("barraDeBusqueda");
 
 const botonBuscar = document.getElementById("buscar")
 
-/* botonBuscar.addEventListener("click", () =>{
-    paquetes00.find( producto => producto.id == paqueteId)
+botonBuscar.addEventListener("click", () =>{
+    let busqueda = paquetes00.find( el => el.destino === barraBusqueda.value);
+    alert(JSON.stringify(busqueda));
     
-}); */
+});
 
-        // let listaDePaquetes = "";
-        // let buscadorDePaquetes = [];
-
-/*             buscadorDePaquetes.push(item);
-            alert(`El item q busco es ${buscadorDePaquetes[0]}`); */
 
 
 

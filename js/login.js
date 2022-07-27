@@ -18,6 +18,7 @@ const usuarios = [];
 
 function loguearte (){
 
+
     const nombre = document.getElementById("nombre");
 
     const email = document.getElementById("email");
@@ -25,6 +26,10 @@ function loguearte (){
     const contrasenia = document.getElementById("contrasenia");
 
     const boton = document.getElementById("botonRegistro");
+
+    let usuarioCargado = localStorage.getItem("nombre");
+
+
 
     boton.addEventListener("click", () => {
 
@@ -43,7 +48,8 @@ function loguearte (){
             const mensaje = `Cuenta registrada: \nNombre: ${login.nombre.value} \nEmail: ${login.email.value}\nContraseña: ${login.contrasenia.value}`;
             alert(mensaje);
 
-            sessionStorage.setItem("mensaje", mensaje);
+            sessionStorage.setItem("nombre", nombre.value);
+            sessionStorage.getItem("nombre");
         }
     })
 
@@ -83,7 +89,7 @@ function loguearte (){
 
 loguearte ();
 
-
+// export {loguearte} ;
 /* let usuario;
 let usuarioStorage = sessionStorage.getItem("usuario");
 
@@ -110,3 +116,6 @@ if(usuarioStorage){
     }
 
 } */
+
+
+

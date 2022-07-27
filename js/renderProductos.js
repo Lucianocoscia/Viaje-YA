@@ -1,6 +1,6 @@
 import {paquetes00} from "./paquetes-armados.js";
 import { carritoLugares } from "./carritoLugares.js";
-
+// Paquetes de lugares populares renderizados
 const mostrarProductos = (productosARenderizar) => {
     const contenedorPaquetes = document.getElementById("card");
 
@@ -13,7 +13,7 @@ const mostrarProductos = (productosARenderizar) => {
                         <h2 class="card__titulos">Destino: ${paquete.destino}</h2>
                         <p>Precio: $${paquete.precio}</p>
                         <span> Descripción: ${paquete.desc}</span>
-                        <button class="boton1" id=boton${paquete.id} type="submit">Reservar<span class="span1"></span></button>
+                        <button class="boton1" id=boton${paquete.id} type="submit">Comprar<span class="span1"></span></button>
                         `
         contenedorPaquetes.appendChild(div);
 

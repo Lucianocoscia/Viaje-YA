@@ -3,7 +3,24 @@ footer {
     bottom: 0;
     height: 10vh;
     display: flex;
-    flex-direction: column;
-    justify-content: center;
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
+}
+footer div p{
+    padding-left: 1rem;
+}
+footer span {
+    padding-right: 1rem;
+    font-size: 2rem;
+    color: #fff;
+}
+
+footer a {
+    text-decoration: none;
+    opacity: 1;
+    transition: 0.2s;
+}
+footer a:hover{
+    opacity: 0.6;
 }

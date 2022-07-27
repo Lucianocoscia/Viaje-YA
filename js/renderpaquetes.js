@@ -1,5 +1,7 @@
 import {paquetes00} from "./paquetes.js";
 
+// renderizado los paquetes en la seccion de reserva
+
 const paquetesScroll = (productosARenderizar) => {
     const contenedorPaquetes = document.getElementById("contenedorPaquetes");
 

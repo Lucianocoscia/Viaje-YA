@@ -1,5 +1,5 @@
 import { paquetes00 } from "./paquetes-armados.js";
-
+// Aca renderizo los paquetes en el carrito
 let carritoDeCompras = [];
 
 export const carritoLugares = (paqueteId) => {

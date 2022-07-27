@@ -1,6 +1,6 @@
 import { carritoLugares } from "./carritoLugares.js";
 import { paquetes00 } from "./paquetes-armados.js";
-
+// aca tengo tengo funcionalidad de abrir y cerrar carrito 
 const modalContenedor = document.querySelector(".modal-container");
 
 const abrirCarrito = document.getElementById("open");

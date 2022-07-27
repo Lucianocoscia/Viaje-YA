@@ -212,9 +212,29 @@ footer {
   bottom: 0;
   height: 10vh;
   display: flex;
-  flex-direction: column;
-  justify-content: center;
+  flex-direction: row;
+  justify-content: space-between;
   align-items: center;
+}
+
+footer div p {
+  padding-left: 1rem;
+}
+
+footer span {
+  padding-right: 1rem;
+  font-size: 2rem;
+  color: #fff;
+}
+
+footer a {
+  text-decoration: none;
+  opacity: 1;
+  transition: 0.2s;
+}
+
+footer a:hover {
+  opacity: 0.6;
 }
 
 /* Seccion Reserva */
@@ -488,6 +508,22 @@ div button .span1 {
   justify-content: space-between;
 }
 
+.productoEnCarrito2 {
+  border-left: 5px solid lightblue;
+  border-bottom-left-radius: 3px;
+  border-top-left-radius: 3px;
+  margin: 5px 0;
+  padding: 5px 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.productoEnCarrito2-p {
+  padding-left: 0.3rem;
+  padding-bottom: 0.3rem;
+}
+
 .clase__modal {
   position: relative;
 }
@@ -635,7 +671,6 @@ div button .span1 {
   margin-right: 15%;
   height: 40vh;
   margin-bottom: 1rem;
-  /*     padding: 0.5rem; */
 }
 
 .contenedor__form p {
@@ -713,7 +748,7 @@ button:hover span {
   justify-content: center;
   align-items: center;
   height: 33vh;
-  margin-top: 1rem;
+  margin-top: 0.6rem;
 }
 
 .card {

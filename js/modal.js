@@ -1,31 +1,29 @@
-import { carritoLugares } from "./carritoLugares.js";
-import { paquetes00 } from "./paquetes-armados.js";
 // aca tengo tengo funcionalidad de abrir y cerrar carrito 
-const modalContenedor = document.querySelector(".modal-container");
+const modalContenedor = document.querySelector("#carrito");
 
 const abrirCarrito = document.getElementById("open");
 
 const cerrarCarrito = document.getElementById("cerrar");
 
-const modalCarrito = document.querySelector(".modal-carrito");
+const modalCarrito = document.querySelector("#carrito");
 
 abrirCarrito.addEventListener( "click", () =>{
-    modalContenedor.classList.toggle("modal-active");
+    modalContenedor.classList.toggle("carrito-visible");
 
 })
 
 cerrarCarrito.addEventListener('click', ()=>{
-    modalContenedor.classList.remove('modal-active')
+
+    modalContenedor.classList.remove('carrito-visible')
+
 })
 
-modalContenedor.addEventListener('click',() =>{
+/* modalContenedor.addEventListener('click',() =>{
     cerrarCarrito.click();
 })
 
 modalCarrito.addEventListener('click', (e) =>{
     e.stopPropagation();
 })
+ */
 
-
-// si son un mismo producto q se sumen con un condicional se puede hacer, INVESTIGAR
-// tomar id y aplicar splice. es decir q se elimine el valor

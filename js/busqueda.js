@@ -5,9 +5,14 @@ const barraBusqueda = document.getElementById("barraDeBusqueda");
 const botonBuscar = document.getElementById("buscar")
 
 botonBuscar.addEventListener("click", () =>{
+    let contenedorBuscado = document.getElementById("mostrarBusqueda");
     let busqueda = paquetes00.find( el => el.destino === barraBusqueda.value);
-    alert(JSON.stringify(busqueda));
-    
+
+    let div = document.createElement("div");
+    div.classList.add("div-busqueda");
+
+    div.innerHTML = `${(busqueda.img)}`;
+    contenedorBuscado.append(div);
 });
 
 

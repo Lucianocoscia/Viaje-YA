@@ -2,7 +2,7 @@
 .grid {
     margin-left: 5%;
     margin-right: 5%;
-    min-height: 65vh;
+    min-height: 60vh;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-template-rows: repeat(3, 1fr);
@@ -96,4 +96,12 @@
     border: transparent;
     cursor: pointer;
     width: 100px;
+}
+
+.div-busqueda {
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
 }

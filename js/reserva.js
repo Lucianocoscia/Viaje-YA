@@ -182,7 +182,7 @@ function reserva (){
             alert(mensaje1);
             alert("Se agrego la reserva al carrito");
 // Intentando sumarlo al carrito
-            const contenedorCarrito = document.getElementById("carrito-contenedor");
+            const contenedorCarrito = document.querySelector("#lista-carrito tbody");
             
             let div = document.createElement("div");
 
@@ -197,7 +197,7 @@ function reserva (){
                             <p class="productoEnCarrito2-p"  id="cantidad${paquetes00.id}">Cantidad: ${paquetes00.cantidad}</p>
                             <button  id ="eliminar${paquetes00.id}" class = "boton-eliminar"><span class="icono2 jam jam-trash">
                             `
-            contenedorCarrito.appendChild(div);
+            contenedorCarrito.append(div);
 
 
 

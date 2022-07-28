@@ -180,25 +180,25 @@ function reserva (){
             const mensaje1 = `Su reserva quedo de esta manera: \n Fecha de partida: ${paquetes[0].value} \n Origen: ${paquetes[2].value}\n Destino: ${paquetes[3].value} \n Precio Final con descuento aplicado: $${paquetes[5]} \n Precio Lista: $${paquetes[4]} \n Cantidad De pasajeros: ${paquetes[6].value} `;
 
             alert(mensaje1);
-            alert("Se agrego la reserva al carrito");
+
 // Intentando sumarlo al carrito
             const contenedorCarrito = document.querySelector("#lista-carrito tbody");
             
-            let div = document.createElement("div");
+            let tr = document.createElement("tr");
 
-            div.classList.add("productoEnCarrito2"); //00:49:36
+            tr.classList.add("productoEnCarrito2"); //00:49:36
             
-            div.innerHTML = `<p class="productoEnCarrito2-p" >Fecha de Partida: ${paquetes[0].value} </p>
-                            <p class="productoEnCarrito2-p" >Origen: ${paquetes[2].value} </p>
-                            <p class="productoEnCarrito2-p" >Destino: ${paquetes[3].value} </p>
-                            <p class="productoEnCarrito2-p" >Precio: $${paquetes[4]}</p>
-                            <p class="productoEnCarrito2-p" >Precio con descuento: $${paquetes[5]}</p>
-                            <p class="productoEnCarrito2-p" >Cantidad de pasajeros: ${paquetes[6].value}</p>
-                            <p class="productoEnCarrito2-p"  id="cantidad${paquetes00.id}">Cantidad: ${paquetes00.cantidad}</p>
-                            <button  id ="eliminar${paquetes00.id}" class = "boton-eliminar"><span class="icono2 jam jam-trash">
+            tr.innerHTML = `<td class="productoEnCarrito2-p" >Fecha de Partida: ${paquetes[0].value} </td>
+                            <td class="productoEnCarrito2-p" >Origen: ${paquetes[2].value} </td>
+                            <td class="productoEnCarrito2-p" >Destino: ${paquetes[3].value} </td>
+                            <td class="productoEnCarrito2-p" >Precio: $${paquetes[4]}</td>
+                            <td class="productoEnCarrito2-p" >Precio con descuento: $${paquetes[5]}</td>
+                            <td class="productoEnCarrito2-p" >Cantidad de pasajeros: ${paquetes[6].value}</td>
+                            <td class="productoEnCarrito2-p"  id="cantidad${paquetes00.id}">Cantidad: ${paquetes00.cantidad}</td>
+                            <button data-id ="${paquetes00.id}" class = "boton-eliminar icono2 jam jam-trash"></button> 
                             `
-            contenedorCarrito.append(div);
-
+            contenedorCarrito.append(tr);
+            alert("Se agrego la reserva al carrito");
 
 
         }else if(vueloIdaYVuelta.checked) {
@@ -207,25 +207,26 @@ function reserva (){
 
             alert(mensaje2);
 
-            alert("Se agrego la reserva al carrito");
 
-            const contenedorCarrito = document.getElementById("carrito-contenedor");
-            
-            let div = document.createElement("div");
 
-            div.classList.add("productoEnCarrito2"); //00:49:36
+            const contenedorCarrito = document.querySelector("#lista-carrito tbody");
             
-            div.innerHTML = `<p class="productoEnCarrito2-p" >Fecha de Partida: ${paquetes[0].value} </p>
-                                <p class="productoEnCarrito2-p" >Fecha de Vuelta: ${paquetes[1].value} </p>
-                            <p class="productoEnCarrito2-p" >Origen: ${paquetes[2].value} </p>
-                            <p class="productoEnCarrito2-p" >Destino: ${paquetes[3].value} </p>
-                            <p class="productoEnCarrito2-p" >Precio: $${paquetes[4]}</p>
-                            <p class="productoEnCarrito2-p" >Precio con descuento: $${paquetes[5]}</p>
-                            <p class="productoEnCarrito2-p" >Cantidad de pasajeros: ${paquetes[6].value}</p>
-                            <p class="productoEnCarrito2-p"  id="cantidad${paquetes00.id}">Cantidad: ${paquetes00.cantidad}</p>
-                            <button  id ="eliminar${paquetes00.id}" class = "boton-eliminar"><span class="icono2 jam jam-trash">
+            let tr = document.createElement("tr");
+
+            tr.classList.add("productoEnCarrito2"); //00:49:36
+            
+            tr.innerHTML = `<td class="productoEnCarrito2-p" >Fecha de Partida: ${paquetes[0].value} </td>
+                                <td class="productoEnCarrito2-p" >Fecha de Vuelta: ${paquetes[1].value} </td>
+                            <td class="productoEnCarrito2-p" >Origen: ${paquetes[2].value} </td>
+                            <td class="productoEnCarrito2-p" >Destino: ${paquetes[3].value} </td>
+                            <td class="productoEnCarrito2-p" >Precio: $${paquetes[4]}</td>
+                            <td class="productoEnCarrito2-p" >Precio con descuento: $${paquetes[5]}</td>
+                            <td class="productoEnCarrito2-p" >Cantidad de pasajeros: ${paquetes[6].value}</td>
+                            <td class="productoEnCarrito2-p"  id="cantidad${paquetes00.id}">Cantidad: ${paquetes00.cantidad}</td>
+                            <button data-id ="${paquetes00.id}" class = "boton-eliminar icono2 jam jam-trash"></button> 
                             `
-            contenedorCarrito.appendChild(div);
+            contenedorCarrito.appendChild(tr);
+            alert("Se agrego la reserva al carrito");
         }
 
     // borro datos de los inputs

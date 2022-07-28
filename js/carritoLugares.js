@@ -44,7 +44,7 @@ function limpiarHTML(){
 }
 
 // Muestra el carrito de compras en el html
-function carritoHTML (){
+export function carritoHTML (){
 
     //Limpiar el html
     limpiarHTML();

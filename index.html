@@ -59,15 +59,20 @@
             </div>
         </section>
 
-        <div class="modal-container" id="modal_container">
-            <div class="modal-carrito">
-                <div class="contenedor__flex">
-                    <h3 class="modal__titulo">Carrito</h3>
-                    <button class="boton1" id="cerrar">Cerrar</button>
-                </div>
+        <div id="carrito" class="carrito">
+            <table id="lista-carrito">
+                <thead>
+                    <tr>
+                        <th>Nombre</th>
+                        <th>Precio</th>
+                        <th>Cantidad</th>
+                    </tr>
+                </thead>
+                <tbody class="tbody"></tbody>
+            </table>
+                <a class="vaciar-carrito" href="#" id="vaciar-carrito">Vaciar Carrito</a>
+                <button class="boton1" id="cerrar">Cerrar</button>
 
-                <div id="carrito-contenedor"></div>
-            </div>
         </div>
 
     </main>
@@ -84,5 +89,7 @@
     </footer>
     
 <script src="./js/storage.js" type="module"></script>
+<!-- <script src="./js/carritoLugares.js"></script> -->
+<script src="./js/modal.js"></script>
 </body>
 </html>

@@ -11,7 +11,7 @@ const paquetes00 = [
     { id: 9, img:  "../images/paris2.jpg" ,destino: "Paris", desc: "Viaje de 7 noches", precio: 370000, cantidad: 1, },
     { id: 10, img:  "../images/australia2.jpg" ,destino: "Australia", desc: "Viaje de 7 noches", precio: 350000, cantidad: 1, },
     { id: 11, img:  "../images/inglaterra2.jpg" ,destino: "Inglaterra", desc: "Viaje de 7 noches", precio: 400000, cantidad: 1, },
-    { id: 12, img:  "../images/puntadeleste.jpg" ,destino: "Punta del Este, Uruguay", desc: "Viaje de 7 noches", precio: 350000, cantidad: 1, },
+    { id: 12, img:  "../images/puntadeleste.jpg" ,destino: "Punta del Este", desc: "Viaje de 7 noches", precio: 350000, cantidad: 1, },
 ];
 
 export {paquetes00};

@@ -1,23 +1,16 @@
 // Clase constructora de usuario
 class Usuario {
-
     constructor(nombre,email,contrasenia){
         this.nombre = nombre;
         this.email = email;
         this.contrasenia = contrasenia;
     }
-
 }
 // array de usuarios donde van a ir almacenados los usarios q se logueen
 const usuarios = [];
 
-//validacion de email
-// HACER LO DE STORAGE, VALIDACIONES EN LOGUEOS, Y EMAILS O CONTRASEÑAS
-
 // comienzo de funcion de logueo
-
 function loguearte (){
-
 
     const nombre = document.getElementById("nombre");
 
@@ -27,16 +20,34 @@ function loguearte (){
 
     const boton = document.getElementById("botonRegistro");
 
-    let usuarioCargado = localStorage.getItem("nombre");
-
-
-
     boton.addEventListener("click", () => {
 
         if(nombre.value === ""  || email.value === ""  || contrasenia.value === "" ){
             alert("Complete los campos indicados. Para que el registro se aplique de manera correcta.")
+/*             Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Complete los campos indicados. Para que el registro se aplique de manera correcta.',
+            }) */
+
         }else {
             alert("Felicitaciones! Has creado tu cuenta con exito! Te regalamos un cupon del 20% en tu reserva ingresando 'viaje-ya'.")
+/*             const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 6000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            
+            Toast.fire({
+                icon: 'success',
+                title: 'Felicitaciones! Has creado tu cuenta con exito! Te regalamos un cupon del 20% en tu reserva ingresando "VIAJE-YA".'
+            }) */
 
             //Creo los usarios como objetos para luego pushearlos
             const login = new Usuario(nombre, email, contrasenia);
@@ -47,6 +58,13 @@ function loguearte (){
             //Muestro por alert como almacene los datos q registro
             const mensaje = `Cuenta registrada: \nNombre: ${login.nombre.value} \nEmail: ${login.email.value}\nContraseña: ${login.contrasenia.value}`;
             alert(mensaje);
+
+
+/*             Swal.fire(
+                'Cuenta Registrada:',
+                ` Nombre: ${login.nombre.value} <br> Email: ${login.email.value} <br> Contraseña: ${login.contrasenia.value}`,
+                'info'
+            ) */
 
             sessionStorage.setItem("nombre", nombre.value);
             sessionStorage.getItem("nombre");
@@ -60,23 +78,55 @@ function loguearte (){
 
     const boton2 = document.getElementById("botonInicioSesion");
 
-
     boton2.addEventListener("click", () => {
 
-        console.log(contrasenia.value);
-        console.log(contrasenia2.value);
+/*         console.log(contrasenia.value);
+        console.log(contrasenia2.value); */
         if(email2.value === ""  || contrasenia2.value === "" ){
+            alert("Complete los campos indicados. Para que el registro se aplique de manera correcta.");
+/*             Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Complete los campos indicados. Para que el registro se aplique de manera correcta.',
+            }) */
 
-            alert("Complete los campos indicados. Para que el registro se aplique de manera correcta.")
-
-        }else if (contrasenia.value != contrasenia2.value){
-
-            alert("Contraseña incorrecta. Intente nuevamente.")
+        }
+        if (contrasenia.value != contrasenia2.value){
+            alert("Contraseña incorrecta. Intente nuevamente.");
+/*             Swal.fire({
+                icon: 'error',
+                title: 'Oops...',
+                text: 'Contraseña incorrecta. Intente nuevamente.',
+            }) */
 
         } else {
             alert("Inicio de sesión realizado.")
-            alert(`Bienvenido/a! ${nombre.value}`);
-    
+/*          const Toast = Swal.mixin({
+                toast: true,
+                position: 'top-end',
+                showConfirmButton: false,
+                timer: 3000,
+                timerProgressBar: true,
+                didOpen: (toast) => {
+                    toast.addEventListener('mouseenter', Swal.stopTimer)
+                    toast.addEventListener('mouseleave', Swal.resumeTimer)
+                }
+            })
+            
+            Toast.fire({
+            icon: 'success',
+            title: 'Inicio de sesión realizado.'
+        }) */
+        alert(`Bienvenido/a! ${nombre.value}`);
+/*         Swal.fire({
+            title: `Bienvenido/a! ${nombre.value}`,
+            showClass: {
+                popup: 'animate__animated animate__fadeInDown'
+            },
+            hideClass: {
+                popup: 'animate__animated animate__fadeOutUp'
+            }
+            }) */
 
         }
         nombre.value = "";
@@ -89,18 +139,6 @@ function loguearte (){
 
 loguearte ();
 
-// export {loguearte} ;
-/* let usuario;
-let usuarioStorage = sessionStorage.getItem("usuario");
-
-if(usuarioStorage){
-  let usuario = usuarioStorage;
-  let mensaje = `Bienvenid@ ${usuario}`;
-  alert(mensaje);
-}else{
-  usuario = prompt("Ingrese su nombre");
-  sessionStorage.setItem("usuario", usuario);
-} */
 
 // cerrar sesion con un boton y meter el sessionstorage.clear()
     

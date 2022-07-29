@@ -7,10 +7,10 @@ let paquetesCarrito = [];
 
 // FUNCIONES
 function agregarPaquete (e){
-    // e.preventDefault();
+    // e.preventDefault(); //para q no se te tire para arriba
 
     if(e.target.classList.contains("agregar-carrito")){
-        const paqueteSeleccionado = e.target.parentElement
+        const paqueteSeleccionado = e.target.parentElement;
 
         leerDatosPaquete(paqueteSeleccionado);
     }
@@ -44,7 +44,7 @@ function limpiarHTML(){
 }
 
 // Muestra el carrito de compras en el html
-export function carritoHTML (){
+function carritoHTML (){
 
     //Limpiar el html
     limpiarHTML();
@@ -64,13 +64,13 @@ export function carritoHTML (){
                         <td> <button data-id ="${id}" class = "boton-eliminar icono2 jam jam-trash"></button> </td>
                         `;
         // Agrega el html del carrito en el tbody
-    contenedorCarrito.append(row);
+        contenedorCarrito.append(row);
     })
 }
 
-// ELimina paquete del carrito
+// Elimina paquete del carrito
 function eliminarPaquete (e){
-    if(e.target.classList.contains("boton-eliminar")){;
+    if(e.target.classList.contains("boton-eliminar")){
         const paqueteId = e.target.getAttribute("data-id");
 
         //Elimina del arreglo de paquetesCarrito por el data-id
@@ -78,10 +78,16 @@ function eliminarPaquete (e){
 
         carritoHTML(); //iterar sobre el carrito y mostrar su HTML
     }
+    // EN EL CASO Q EXISTA EN EL CARRITO EL PAQUETE TENGO Q ELIMINAR CANTIDAD -1
+    
+ /*    if(paquete.Id === paqueteId){
+        paquete.cantidad--;
+        return paquete;
+    } */
+
 }
 
-//Lee el contenido del HtML, al q le dimos click y extrae la informacion del paquete
-
+//Lee el contenido del HTML, al q le dimos click y extrae la informacion del paquete
 function leerDatosPaquete(paquete){
     // console.log(paquete);
 
@@ -94,10 +100,10 @@ function leerDatosPaquete(paquete){
         cantidad: 1,
     }
 
-    //revisa si un elemento ya existe een el carrito
+    //revisa si un elemento ya existe en el carrito
     const existe = paquetesCarrito.some ( paquete => paquete.id === infoPaquete.id);
-    if(existe){
 
+    if(existe){
         //actualizamos la cantidad .map crea un nuevo arreglo por eso la variable
         const paquetes = paquetesCarrito.map ( paquete => {
             if(paquete.id === infoPaquete.id){
@@ -110,13 +116,19 @@ function leerDatosPaquete(paquete){
         paquetesCarrito = [...paquetes];
 
     } else{ 
-    // Agrega elementos al arreglo del carrito
-    paquetesCarrito = [...paquetesCarrito, infoPaquete];
+        // Agrega elementos al arreglo del carrito
+        paquetesCarrito = [...paquetesCarrito, infoPaquete];
     }
-
-
-
+    Swal.fire(
+        'Buen trabajo!',
+        'Se ha guardado el paquete en el carrito',
+        'success'
+    )
     console.log(paquetesCarrito);
+
+    sessionStorage.setItem("paquetesCarrito", JSON.stringify(paquetesCarrito))
+    sessionStorage.getItem("paquetesCarrito")
+
     carritoHTML();
 } 
 

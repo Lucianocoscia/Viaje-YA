@@ -43,7 +43,7 @@
     overflow: hidden;
 }
 .span0 {
-    background: #009688;
+    background: #009687a0;
     height: 100%;
     width: 0%;
     border-radius: 25px;
@@ -139,4 +139,25 @@
     // top: -2;
     bottom: 0;
     left: 0;
+}
+.displayRow{
+    display: flex;
+    flex-direction: row;
+    justify-content:space-between ;
+    align-items: center;
+}
+.botonDestino{
+    width: 100px;
+    padding: 15px 0;
+    text-align: center;
+    // margin: 20px 10px;
+    border-radius: 25px;
+    font-weight: bold;
+    border: 2px solid #009688;
+    background: transparent;
+    color: #fff;
+    cursor: pointer;
+    align-self: center;
+    position: relative;
+    overflow: hidden;
 }

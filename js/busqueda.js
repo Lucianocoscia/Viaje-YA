@@ -14,7 +14,7 @@ botonBuscar.addEventListener("click", () =>{
     div.innerHTML = `${(busqueda.img)}`;
     contenedorBuscado.append(div);
 });
-
+// agregra sweet alert con img
 
 
 

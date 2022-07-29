@@ -2,7 +2,23 @@
 
 let usuarioCargado = sessionStorage.getItem("nombre");
 if(usuarioCargado){
-    alert(`Bienvenido nuevamente ${sessionStorage.nombre}`)
+    // alert(`Bienvenido nuevamente ${sessionStorage.nombre}`);
+    const Toast = Swal.mixin({
+        toast: true,
+        position: 'top-end',
+        showConfirmButton: false,
+        timer: 6000,
+        timerProgressBar: true,
+        didOpen: (toast) => {
+            toast.addEventListener('mouseenter', Swal.stopTimer)
+            toast.addEventListener('mouseleave', Swal.resumeTimer)
+        }
+    })
+    
+    Toast.fire({
+        icon: 'success',
+        title: `Bienvenido nuevamente ${sessionStorage.nombre}`
+    })
 } else {
     // alert("Inicia Sesion o registrate");
     Swal.fire(
@@ -13,9 +29,7 @@ if(usuarioCargado){
 }
 
 // Storage del carrito
-/* let paquetesCarrito = sessionStorage.getItem("paquetesCarrito")
-if(paquetesCarrito){
-    alert("Hay algo en el carrito");
-}else{
-    alert("No hay nada en el carrito");
+/* let paquetesCarrito =  JSON.parse(localStorage.getItem("carrito")) ;
+if(!paquetesCarrito){
+    paquetesCarrito = [];
 } */

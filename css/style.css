@@ -1,3 +1,4 @@
+@charset "UTF-8";
 /* Aca estan todos mis parciales importados */
 /* Mediaquerys al final ; variables al principio */
 * {
@@ -619,7 +620,7 @@ div button .span1 {
 .grid {
   margin-left: 5%;
   margin-right: 5%;
-  min-height: 60vh;
+  min-height: 65vh;
   display: grid;
   grid-template-columns: repeat(3, 1fr);
   grid-template-rows: repeat(3, 1fr);
@@ -627,14 +628,14 @@ div button .span1 {
 }
 
 .hijo__img-1 {
-  background-image: url(../images/playa1.png);
+  background-image: url(../images/australia2.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .hijo__img-2 {
-  background-image: url(../images/paisaje1.jpg);
+  background-image: url(../images/cancún1.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -648,44 +649,57 @@ div button .span1 {
 }
 
 .hijo__img-4 {
-  background-image: url(../images/playa3.jpg);
-  background-position: center;
+  background-image: url(../images/rutasur.jpg);
+  background-position: bottom;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .hijo__img-5 {
-  background-image: url(../images/ventanilla.jpg);
+  background-image: url(../images/venecia-italia.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
 .hijo__img-6 {
-  background-image: url(../images/rio-janeiro.jpg);
+  background-image: url(../images/playa14.png);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
 
-/* .hijo__img-7{
-    background-image: url(../images/rio-janeiro.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+.hijo__img-7 {
+  background-image: url(../images/playa11.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.hijo__img-8{
-    background-image: url(../images/rio-janeiro.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
+
+.hijo__img-8 {
+  background-image: url(../images/cancun2.jpg);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
 }
-.hijo__img-9{
-    background-image: url(../images/rio-janeiro.webp);
-    background-position: center;
-    background-size: cover;
-    background-repeat: no-repeat;
-} */
+
+.hijo__img-9 {
+  background-image: url(../images/newyor-hotel.png);
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+.grid__hijo {
+  overflow: hidden;
+  transition: all 0.3s ease-out;
+}
+
+.grid__hijo:hover {
+  overflow: hidden;
+  transform: scale(1.15, 1.15);
+}
+
 .barra-busqueda {
   width: 75%;
   padding: 10px;
@@ -715,14 +729,13 @@ div button .span1 {
   width: 100px;
 }
 
-.div-busqueda {
-  margin-left: 5%;
-  margin-right: 5%;
-  height: 5vh;
-  display: flex;
-  justify-content: center;
-}
-
+/* .div-busqueda {
+    margin-left: 5%;
+    margin-right: 5%;
+    height: 5vh;
+    display: flex;
+    justify-content: center;
+} */
 /* Seccion Contacto */
 .section__contacto {
   height: 40vh;

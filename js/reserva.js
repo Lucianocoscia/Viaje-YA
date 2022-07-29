@@ -10,7 +10,7 @@ function valorFinal (precio){
 
     if (cuponDescuento.value === "VIAJE-YA" || cuponDescuento.value === "viaje-ya"){
         alert("Descuento aplicado! Se le hizo un descuento del 20%");
-        console.log("entramos al sweet alert1", Swal.fire);
+        // console.log("entramos al sweet alert1", Swal.fire);
 /*         Swal.fire(
             'Descuento aplicado!',
             'Se le hizo un descuento del 20%',
@@ -21,7 +21,7 @@ function valorFinal (precio){
             title: 'Oops...',
             text: 'Something went wrong!',
         }) */
-        console.log("identificador");
+        // console.log("identificador");
 
     }
     if (cuponDescuento.value === "viaje-ya" || cuponDescuento.value === "VIAJE-YA") {
@@ -230,7 +230,7 @@ function reserva (){
 
 
         }else if(vueloIdaYVuelta.checked) {
-
+            console.log(paquetes.id);
             const mensaje2 = `Su reserva quedo de esta manera: \n Fecha de partida: ${paquetes[0].value} \n Fecha de vuelta: ${paquetes[1].value} \n Origen: ${paquetes[2].value}\n Destino: ${paquetes[3].value} \n Precio Final con descuento aplicado: $${paquetes[5]} \n Precio Lista: $${paquetes[4]} \n Cantidad De pasajeros: ${paquetes[6].value}  `;
             alert(mensaje2);
 
@@ -251,6 +251,10 @@ function reserva (){
 reserva();
 
 function reservaAlCarrito (){
+
+/*     //local storage
+    localStorage.setItem("reserva", JSON.stringify(paquetes)); */
+
     // Intentando sumar la reserva al carrito
     const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 
@@ -283,6 +287,20 @@ function reservaAlCarrito (){
             contenedorCarrito.innerHTML = "";
         }
     }
+    // const carrito = document.querySelector("#carrito");
+    contenedorCarrito.addEventListener("click", eliminarPaquete);
+
+    // Elimina paquete del carrito
+    function eliminarPaquete (e){
+        console.log(e.target);
+        console.log(paquetes00.id);
+/*         if(e.target.classList.contains("boton-eliminar")){
+            const paqueteId = e.target.getAttribute("data-id");
+
+        } */
+    }
+
+
     alert("Se agrego la reserva al carrito");
 /*     Swal.fire(
         'Buen trabajo!',

@@ -3,7 +3,11 @@ const contenedorCarrito = document.querySelector("#lista-carrito tbody");
 const vaciarCarritoBtn = document.querySelector("#vaciar-carrito");
 const listaPaquetes = document.querySelector("#lista-paquetes");
 
-let paquetesCarrito = [];
+// let paquetesCarrito = [];
+let paquetesCarrito =  JSON.parse(localStorage.getItem("carrito")) ;
+if(!paquetesCarrito){
+    paquetesCarrito = [];
+}
 
 // FUNCIONES
 function agregarPaquete (e){
@@ -15,6 +19,32 @@ function agregarPaquete (e){
         leerDatosPaquete(paqueteSeleccionado);
     }
 
+}
+
+// Elimina paquete del carrito
+function eliminarPaquete (e){
+    if(e.target.classList.contains("boton-eliminar")){
+        const paqueteId = e.target.getAttribute("data-id");
+
+        //Elimina del arreglo de paquetesCarrito por el data-id
+        paquetesCarrito = paquetesCarrito.filter (  paquete => paquete.id !== paqueteId);
+
+        carritoHTML(); //iterar sobre el carrito y mostrar su HTML
+    }
+/*     if(paquete.id === paqueteId){
+        paquete.cantidad -= 1;
+    } */
+
+}
+
+// funcion para limpiar el carrito
+function limpiarHTML(){
+    // forma lenta
+    // contenedorCarrito.innerHTML = "";
+
+    while (contenedorCarrito.firstChild){
+        contenedorCarrito.removeChild(contenedorCarrito.firstChild)
+    }
 }
 
 function cargarEventListeners (){
@@ -33,19 +63,10 @@ function cargarEventListeners (){
 cargarEventListeners();
 
 
-// funcion para limpiar el carrito
-function limpiarHTML(){
-    // forma lenta
-    // contenedorCarrito.innerHTML = "";
-
-    while (contenedorCarrito.firstChild){
-        contenedorCarrito.removeChild(contenedorCarrito.firstChild)
-    }
-}
-
 // Muestra el carrito de compras en el html
 function carritoHTML (){
 
+    localStorage.setItem("carrito", JSON.stringify(paquetesCarrito));
     //Limpiar el html
     limpiarHTML();
 
@@ -68,24 +89,7 @@ function carritoHTML (){
     })
 }
 
-// Elimina paquete del carrito
-function eliminarPaquete (e){
-    if(e.target.classList.contains("boton-eliminar")){
-        const paqueteId = e.target.getAttribute("data-id");
 
-        //Elimina del arreglo de paquetesCarrito por el data-id
-        paquetesCarrito = paquetesCarrito.filter (  paquete => paquete.id !== paqueteId);
-
-        carritoHTML(); //iterar sobre el carrito y mostrar su HTML
-    }
-    // EN EL CASO Q EXISTA EN EL CARRITO EL PAQUETE TENGO Q ELIMINAR CANTIDAD -1
-    
- /*    if(paquete.Id === paqueteId){
-        paquete.cantidad--;
-        return paquete;
-    } */
-
-}
 
 //Lee el contenido del HTML, al q le dimos click y extrae la informacion del paquete
 function leerDatosPaquete(paquete){
@@ -97,6 +101,7 @@ function leerDatosPaquete(paquete){
         titulo: paquete.querySelector("h2").textContent,
         precio: paquete.querySelector("p").textContent,
         id: paquete.querySelector("button").getAttribute("data-id"),
+        precioBase: paquete.querySelector("p").textContent,
         cantidad: 1,
     }
 
@@ -107,7 +112,8 @@ function leerDatosPaquete(paquete){
         //actualizamos la cantidad .map crea un nuevo arreglo por eso la variable
         const paquetes = paquetesCarrito.map ( paquete => {
             if(paquete.id === infoPaquete.id){
-                paquete.cantidad++;
+                paquete.cantidad += 1;
+                // paquete.precio = paquete.precioBase * cantidad;
                 return paquete; // retorna el objeto actualizado
             }else{
                 return paquete; // retorna los objetos que no son los duplicados
@@ -126,12 +132,12 @@ function leerDatosPaquete(paquete){
     )
     console.log(paquetesCarrito);
 
-    sessionStorage.setItem("paquetesCarrito", JSON.stringify(paquetesCarrito))
-    sessionStorage.getItem("paquetesCarrito")
+/*     sessionStorage.setItem("paquetesCarrito", JSON.stringify(paquetesCarrito))
+    sessionStorage.getItem("paquetesCarrito") */
 
     carritoHTML();
 } 
-
+carritoHTML();
 
 
 

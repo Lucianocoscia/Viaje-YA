@@ -25,16 +25,11 @@ function agregarPaquete (e){
 function eliminarPaquete (e){
     if(e.target.classList.contains("boton-eliminar")){
         const paqueteId = e.target.getAttribute("data-id");
-
         //Elimina del arreglo de paquetesCarrito por el data-id
         paquetesCarrito = paquetesCarrito.filter (  paquete => paquete.id !== paqueteId);
 
         carritoHTML(); //iterar sobre el carrito y mostrar su HTML
     }
-/*     if(paquete.id === paqueteId){
-        paquete.cantidad -= 1;
-    } */
-
 }
 
 // funcion para limpiar el carrito
@@ -67,6 +62,7 @@ cargarEventListeners();
 function carritoHTML (){
 
     localStorage.setItem("carrito", JSON.stringify(paquetesCarrito));
+    
     //Limpiar el html
     limpiarHTML();
 
@@ -83,6 +79,8 @@ function carritoHTML (){
                         <td>${precio}</td>
                         <td>${cantidad}</td>
                         <td> <button data-id ="${id}" class = "boton-eliminar icono2 jam jam-trash"></button> </td>
+                        <td> <button data-id ="${id}" class = "boton-resta  icono2 jam jam-minus"></button> </td>
+                        <td> <button data-id ="${id}" class = "boton-suma  icono2 jam jam-plus"></button> </td>
                         `;
         // Agrega el html del carrito en el tbody
         contenedorCarrito.append(row);
@@ -139,5 +137,24 @@ function leerDatosPaquete(paquete){
 } 
 carritoHTML();
 
-
-
+contenedorCarrito.addEventListener("click", (e) =>{
+    const mas = e.target.classList.contains("boton-suma");
+    const menos = e.target.classList.contains("boton-resta");
+    if( mas || menos){
+        for(let i = 0; i < paquetesCarrito.length; i++){
+            if(paquetesCarrito[i].id === e.target.dataset.id){
+                if(mas){
+                    paquetesCarrito[i].cantidad += 1;
+                }
+                else if(menos){
+                    paquetesCarrito[i].cantidad -= 1;
+                }
+                paquetesCarrito[i].precio = paquetesCarrito[i].precioBase * paquetesCarrito[i].cantidad;
+            }
+            if(paquetesCarrito[i].cantidad <= 0){
+                paquetesCarrito.splice(i,1);
+            }
+        }
+        carritoHTML();
+    }
+});

@@ -1,3 +1,4 @@
+
 // aca tengo tengo funcionalidad de abrir y cerrar carrito 
 const modalContenedor = document.querySelector("#carrito");
 
@@ -27,3 +28,20 @@ modalCarrito.addEventListener('click', (e) =>{
 })
  */
 
+
+// aca tengo funcionalidad de abrir y cerra cuenta
+const modalContenedorUsuario = document.getElementById("usuario");
+const abrirBotonUsuario = document.getElementById("open1");
+const cerrarBotonUsuario = document.getElementById("cerrar2");
+
+abrirBotonUsuario.addEventListener("click", () =>{
+    // alert("Cuenta: Luciano");
+    let emailCargado = sessionStorage.getItem("email");
+    Swal.fire(
+        `Usuario: ${sessionStorage.nombre}`,
+        `Email: ${emailCargado}`,
+        'info'
+    )
+
+
+})

@@ -31,7 +31,7 @@ function loguearte (){
             }) */
 
         }else {
-            alert("Felicitaciones! Has creado tu cuenta con exito! Te regalamos un cupon del 20% en tu reserva ingresando 'viaje-ya'.")
+            alert("Felicitaciones! Has creado tu cuenta con exito! Te regalamos un cupon del 20% en tu reserva ingresando 'viaje-ya'.");
 /*             const Toast = Swal.mixin({
                 toast: true,
                 position: 'top-end',
@@ -60,14 +60,17 @@ function loguearte (){
             alert(mensaje);
 
 
-/*             Swal.fire(
+            Swal.fire(
                 'Cuenta Registrada:',
                 ` Nombre: ${login.nombre.value} <br> Email: ${login.email.value} <br> Contraseña: ${login.contrasenia.value}`,
                 'info'
-            ) */
+            )
 
             sessionStorage.setItem("nombre", nombre.value);
             sessionStorage.getItem("nombre");
+
+            sessionStorage.setItem("email", email.value);
+            sessionStorage.getItem("email");
         }
     })
 

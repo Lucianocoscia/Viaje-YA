@@ -85,53 +85,62 @@ function loguearte (){
 
 /*         console.log(contrasenia.value);
         console.log(contrasenia2.value); */
-        if(email2.value === ""  || contrasenia2.value === "" ){
-            alert("Complete los campos indicados. Para que el registro se aplique de manera correcta.");
-/*             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Complete los campos indicados. Para que el registro se aplique de manera correcta.',
-            }) */
 
-        }
-        if (contrasenia.value != contrasenia2.value){
-            alert("Contraseña incorrecta. Intente nuevamente.");
-/*             Swal.fire({
-                icon: 'error',
-                title: 'Oops...',
-                text: 'Contraseña incorrecta. Intente nuevamente.',
-            }) */
+        // Ternario
+        email2.value === ""  || contrasenia2.value === ""  ? alert("Complete los campos indicados. Para que el registro se aplique de manera correcta.") : null;
+        
+//         if(email2.value === ""  || contrasenia2.value === "" ){
+//             alert("Complete los campos indicados. Para que el registro se aplique de manera correcta.");
+// /*             Swal.fire({
+//                 icon: 'error',
+//                 title: 'Oops...',
+//                 text: 'Complete los campos indicados. Para que el registro se aplique de manera correcta.',
+//             }) */
 
-        } else {
-            alert("Inicio de sesión realizado.")
-/*          const Toast = Swal.mixin({
-                toast: true,
-                position: 'top-end',
-                showConfirmButton: false,
-                timer: 3000,
-                timerProgressBar: true,
-                didOpen: (toast) => {
-                    toast.addEventListener('mouseenter', Swal.stopTimer)
-                    toast.addEventListener('mouseleave', Swal.resumeTimer)
-                }
-            })
+//         }
+
+        // TERNARIO
+
+            contrasenia.value != contrasenia2.value ? alert("Contraseña incorrecta. Intente nuevamente.") : alert("Inicio de sesión realizado."), alert(`Bienvenido/a! ${nombre.value}`,  window.location.href = "../pages/reservar.html");
             
-            Toast.fire({
-            icon: 'success',
-            title: 'Inicio de sesión realizado.'
-        }) */
-        alert(`Bienvenido/a! ${nombre.value}`);
-/*         Swal.fire({
-            title: `Bienvenido/a! ${nombre.value}`,
-            showClass: {
-                popup: 'animate__animated animate__fadeInDown'
-            },
-            hideClass: {
-                popup: 'animate__animated animate__fadeOutUp'
-            }
-            }) */
+//         if (contrasenia.value != contrasenia2.value){
+//             alert("Contraseña incorrecta. Intente nuevamente.");
+// /*             Swal.fire({
+//                 icon: 'error',
+//                 title: 'Oops...',
+//                 text: 'Contraseña incorrecta. Intente nuevamente.',
+//             }) */
 
-        }
+//         } else {
+//             alert("Inicio de sesión realizado.")
+// /*          const Toast = Swal.mixin({
+//                 toast: true,
+//                 position: 'top-end',
+//                 showConfirmButton: false,
+//                 timer: 3000,
+//                 timerProgressBar: true,
+//                 didOpen: (toast) => {
+//                     toast.addEventListener('mouseenter', Swal.stopTimer)
+//                     toast.addEventListener('mouseleave', Swal.resumeTimer)
+//                 }
+//             })
+            
+//             Toast.fire({
+//             icon: 'success',
+//             title: 'Inicio de sesión realizado.'
+//         }) */
+//         alert(`Bienvenido/a! ${nombre.value}`);
+// /*         Swal.fire({
+//             title: `Bienvenido/a! ${nombre.value}`,
+//             showClass: {
+//                 popup: 'animate__animated animate__fadeInDown'
+//             },
+//             hideClass: {
+//                 popup: 'animate__animated animate__fadeOutUp'
+//             }
+//             }) */
+
+//         }
         nombre.value = "";
         email.value = "";
         contrasenia.value ="";

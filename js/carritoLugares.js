@@ -9,6 +9,10 @@ if(!paquetesCarrito){
     paquetesCarrito = [];
 }
 
+// Agrega el html del carrito en el tbody
+
+
+
 // FUNCIONES
 function agregarPaquete (e){
     // e.preventDefault(); //para q no se te tire para arriba
@@ -73,7 +77,6 @@ function carritoHTML (){
         const { titulo, precio, cantidad, id } = paquete;
 
         const row = document.createElement("tr");
-        // row.classList.add ("row")
         row.innerHTML = `
                         <td>${titulo}</td>
                         <td>${precio}</td>

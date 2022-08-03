@@ -8,22 +8,15 @@ function valorFinal (precio){
     const cuponDescuento = document.getElementById("descuento");
     let descuento = precio * 0.2;
 
-    if (cuponDescuento.value === "VIAJE-YA" || cuponDescuento.value === "viaje-ya"){
+// Ternario
+    cuponDescuento.value === "VIAJE-YA" || cuponDescuento.value === "viaje-ya" ? alert("Descuento aplicado! Se le hizo un descuento del 20%"): null ;
+
+/*     if (cuponDescuento.value === "VIAJE-YA" || cuponDescuento.value === "viaje-ya"){
         alert("Descuento aplicado! Se le hizo un descuento del 20%");
         // console.log("entramos al sweet alert1", Swal.fire);
-/*         Swal.fire(
-            'Descuento aplicado!',
-            'Se le hizo un descuento del 20%',
-            'success'
-        ) */
-/*         Swal.fire({
-            icon: 'error',
-            title: 'Oops...',
-            text: 'Something went wrong!',
-        }) */
-        // console.log("identificador");
 
-    }
+    } */
+
     if (cuponDescuento.value === "viaje-ya" || cuponDescuento.value === "VIAJE-YA") {
         let resultado = precio - descuento;
         alert(`El valor final con el descuento aplicado es de $${resultado}`);
@@ -34,6 +27,7 @@ function valorFinal (precio){
             'info'
         ) */
         paquetes.push(resultado); // [5]
+        console.log(paquetes.length);
         cuponDescuento.value = "";
     }
 }
@@ -258,15 +252,15 @@ function reserva (){
 
         mostrarPrecio();
 
-        paquetes.push(cantidadDePasajeros);
-        // console.log(paquetes[6]);
+        // paquetes.push(cantidadDePasajeros);
+        console.log(paquetes.length);
 
         if(vueloIda.checked){
 
             const mensaje1 = `Su reserva quedo de esta manera: \n Fecha de partida: ${paquetes[0].value} \n Origen: ${paquetes[2].value}\n Destino: ${paquetes[3].value} \n Precio Final con descuento aplicado: $${paquetes[5]} \n Precio Lista: $${paquetes[4]} \n Id: ${paquetes[6]} `;
             alert(mensaje1);
 
-            // mostrarCarrito();
+            mostrarCarrito();
 
             // borrarDatos ();
 
@@ -275,7 +269,7 @@ function reserva (){
             const mensaje2 = `Su reserva quedo de esta manera: \n Fecha de partida: ${paquetes[0].value} \n Fecha de vuelta: ${paquetes[1].value} \n Origen: ${paquetes[2].value}\n Destino: ${paquetes[3].value} \n Precio Final con descuento aplicado: $${paquetes[5]} \n Precio Lista: $${paquetes[4]} \n Id: ${paquetes[6]}  `;
             alert(mensaje2);
 
-            // mostrarCarrito();
+            mostrarCarrito();
             // borrarDatos(); // consultar si hay manera de solo cambiar algo del inner.html
         }
 
@@ -297,6 +291,7 @@ function reserva (){
 reserva();
 
 
+function mostrarCarrito (){
     // Intentando pasar la reserva al carrito
     const carrito = document.querySelector("#carrito");
     const contenedorCarrito = document.querySelector("#lista-carrito tbody");
@@ -304,32 +299,15 @@ reserva();
     const listaReserva = document.querySelector("#contenedorReserva");
 
     let reservasCarrito = [];
+
     // INTENTO DE LOCALSTORAGE
 /*     let reservasCarrito =  JSON.parse(localStorage.getItem("reservaCarrito")) ;
     if(!reservasCarrito){
         reservasCarrito = [];
     }  */
 
-    registroEventListener();
 
-    function registroEventListener(){
 
-        // cuando agregas reserva al apretar "buscar Reserva"
-        listaReserva.addEventListener("click", agregarReserva);
-
-        // eliminar cursos del carrito
-        carrito.addEventListener("click", eliminarReserva); 
-
-        // vaciar el carrito
-        vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
-    }
-
-        
-    function vaciarCarrito (e){
-        if(e.target.classList.contains("vaciar-carrito")){
-            contenedorCarrito.innerHTML = "";
-        }
-    }
 
     function agregarReserva(e){
 
@@ -339,16 +317,38 @@ reserva();
         }
     }
 
+    function vaciarCarrito (e){
+/*         if(e.target.classList.contains("vaciar-carrito")){
+            contenedorCarrito.innerHTML = "";
+        } */
+        reservasCarrito = []; // reseteamos el carrito
+        limpiarHTML(); // eliminamos todo del HTML
+    }
+    function registroEventListener(){
+
+        // cuando agregas reserva al apretar "buscar Reserva"
+        listaReserva.addEventListener("click", agregarReserva);
+
+/*         // eliminar cursos del carrito
+        carrito.addEventListener("click", eliminarReserva);  */
+
+        // vaciar el carrito
+        vaciarCarritoBtn.addEventListener("click", vaciarCarrito);
+    }
+    registroEventListener();
+        
+
+
     // elimina la reserva del carrito NECESITO EL ID PARA ESTO
 
-    function eliminarReserva(e){
+/*     function eliminarReserva(e){
 
         // console.log('desde eliminar reserva');
 
         if(e.target.classList.contains("boton-eliminar")){
             // console.log(e.target.getAttribute("data-id"));
             const reservaId = e.target.getAttribute("data-id");
-
+            // paquetes[6] = paquetes[14]
             // elimina del arreglo la reserva por el data id 
 
             reservasCarrito = reservasCarrito.filter ( reserva => reserva.id !== reservaId); // no me funca con dos iguales y con uno me cambia el valor del id
@@ -356,7 +356,53 @@ reserva();
             reservaHTML();  // volvemos aiterar sobre el carrito y muestra el html
         }
     } 
+ */
 
+    // elimina las reservas del tbody
+    function limpiarHTML(){
+        // forma lenta de borrado
+        contenedorCarrito.innerHTML = "";
+
+/*         while(contenedorCarrito.firstChild){
+            contenedorCarrito.removeChild(contenedorCarrito.firstChild);
+        } */
+    }
+
+    // muestra en el carrito el html
+    function reservaHTML(){
+
+        // localStorage.setItem("reservaCarrito", JSON.stringify(reservasCarrito));
+
+        //limpiar el html
+        limpiarHTML();
+
+        //recorre el carrito y genera el html
+        reservasCarrito.forEach( reserva => {
+            // optimizando con variables
+            const { fechaPartida, fechaVuelta, origen, destino, precio, precioDescuento, id, cantidad} = reserva;
+            
+            const row = document.createElement("tr");
+
+            row.innerHTML = `
+                                <td class="productoEnCarrito2-p" >Fecha de Partida: ${fechaPartida} 
+                                                                <p>Fecha de Vuelta: ${fechaVuelta}</p>
+                                                                <p>Origen: ${origen}</p>
+                                                                <p>Destino: ${destino}</p> 
+                                </td>
+                                
+                                <td class="productoEnCarrito2-p" >Precio: $${precio}
+                                                                <p>Precio con descuento: $${precioDescuento}</p>
+                                </td>
+                                <td>${cantidad}</td>
+                                <td><button data-id ="${id}" class = "boton-eliminar icono2 jam jam-trash"></button></td>
+                                <td> <button data-id ="${id}" class = "boton-resta  icono2 jam jam-minus"></button> </td>
+                                <td> <button data-id ="${id}" class = "boton-suma  icono2 jam jam-plus"></button> </td>
+                            `;
+            // Agrega el html de la reserva en el tbody
+            contenedorCarrito.append(row);
+        })
+        // alert("Se agrego al carrito")
+    }
 
 
     // lee el contenido de la reserva
@@ -382,55 +428,14 @@ reserva();
         reservaHTML();
     }
 
-    // muestra en el carrito el html
-    function reservaHTML(){
 
-        // localStorage.setItem("reservaCarrito", JSON.stringify(reservasCarrito));
 
-        //limpiar el html
-        limpiarHTML();
 
-        //recorre el carrito y genera el html
-        reservasCarrito.forEach( reserva => {
-            // optimizando con variables
-            const { fechaPartida, fechaVuelta, origen, destino, precio, precioDescuento, id, cantidad} = reserva;
-            
-            const row = document.createElement("tr");
-            // row.classList.add ("row")
-            row.innerHTML = `
-                                <td class="productoEnCarrito2-p" >Fecha de Partida: ${fechaPartida} 
-                                                                <p>Fecha de Vuelta: ${fechaVuelta}</p>
-                                                                <p>Origen: ${origen}</p>
-                                                                <p>Destino: ${destino}</p> 
-                                </td>
-                                
-                                <td class="productoEnCarrito2-p" >Precio: $${precio}
-                                                                <p>Precio con descuento: $${precioDescuento}</p>
-                                </td>
-                                <td>${cantidad}</td>
-                                <td><button data-id ="${id}" class = "boton-eliminar icono2 jam jam-trash"></button></td>
-                                <td> <button data-id ="${id}" class = "boton-resta  icono2 jam jam-minus"></button> </td>
-                                <td> <button data-id ="${id}" class = "boton-suma  icono2 jam jam-plus"></button> </td>
-                            `;
-            // Agrega el html de la reserva en el tbody
-            contenedorCarrito.append(row);
-        })
-        // alert("Se agrego al carrito")
-    }
 
-    // elimina las reservas del tbody
-    function limpiarHTML(){
-        // forma lenta de borrado
-        // contenedorCarrito.innerHTML = "";
-
-        while(contenedorCarrito.firstChild){
-            contenedorCarrito.removeChild(contenedorCarrito.firstChild);
-        }
-    }
-
+    
     // Necesito el id para esto}
 
-    contenedorCarrito.addEventListener("click", (e) =>{
+/*     contenedorCarrito.addEventListener("click", (e) =>{
 
         const mas = e.target.classList.contains("boton-suma");
         const menos = e.target.classList.contains("boton-resta");
@@ -452,8 +457,8 @@ reserva();
             }
             reservaHTML();
         }
-    }); 
-
+    });  */
+}
 
 
 
